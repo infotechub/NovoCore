@@ -12532,27 +12532,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Dell Latitude E6420\\.nuget\\packages\\": {},
-    "C:\\ProgramData\\Xamarin\\NuGet\\": {},
+    "C:\\Users\\freempire\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Dell Latitude E6420\\source\\repos\\NovoCore\\NovoCore\\NovoCore.csproj",
+      "projectUniqueName": "C:\\Users\\freempire\\source\\repos\\NovoCore\\NovoCore\\NovoCore.csproj",
       "projectName": "NovoCore",
-      "projectPath": "C:\\Users\\Dell Latitude E6420\\source\\repos\\NovoCore\\NovoCore\\NovoCore.csproj",
-      "packagesPath": "C:\\Users\\Dell Latitude E6420\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Dell Latitude E6420\\source\\repos\\NovoCore\\NovoCore\\obj\\",
+      "projectPath": "C:\\Users\\freempire\\source\\repos\\NovoCore\\NovoCore\\NovoCore.csproj",
+      "packagesPath": "C:\\Users\\freempire\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\freempire\\source\\repos\\NovoCore\\NovoCore\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\ProgramData\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Dell Latitude E6420\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\freempire\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"

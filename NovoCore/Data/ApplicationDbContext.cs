@@ -11,5 +11,33 @@ namespace NovoCore.Data
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options) { }
+
+
+        public DbSet<NovoAuthorizationCode> AuthorizationCode { get; set; }
+        public DbSet<AuthorizationRequest> AuthorizationRequest { get; set; }
+        public DbSet<Bank> Bank { get; set; }
+        public DbSet<Benefit> Benefit { get; set; }
+        public DbSet<BenefitsCategory> BenefitsCategory { get; set; }
+        public DbSet<Claim> Claim { get; set; }
+        public DbSet<ClaimBatch> ClaimBatch { get; set; }
+        public DbSet<ClaimDrug> ClaimDrug { get; set; }
+        public DbSet<ClaimService> ClaimService { get; set; }
+        public DbSet<Company> Company { get; set; }
+        public DbSet<CompanyBranch> CompanyBranch { get; set; }
+        public DbSet<EnrolleePassport> EnrolleePassport { get; set; }
+        public DbSet<IncomingClaims> IncomingClaims { get; set; }
+        public DbSet<Lga> Lga { get; set; }
+        public DbSet<PaymentBatch> PaymentBatch { get; set; }
+        public DbSet<Provider> Provider { get; set; }
+        public DbSet<ProviderAccount> ProviderAccount { get; set; }
+        public DbSet<ProviderAssignee> ProviderAssignee { get; set; }
+        public DbSet<ProviderLogin> ProviderLogin { get; set; }
+        public DbSet<ProviderRating> ProviderRating { get; set; }
+        public DbSet<ProviderServices> ProviderServices { get; set; }
+        public DbSet<State> State { get; set; }
+        public DbSet<Subsidiary> CompanySubsidiary { get; set; }
+        public DbSet<FacilitiesAllowed> FacilitiesAllowed { get; set; }
     }
+
+        
 }
