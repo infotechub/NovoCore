@@ -1,7 +1,30 @@
-﻿@model  NovoCore.ViewModel.ProviderViewModel
+﻿
+@model NovoCore.ViewModel.ProviderViewModel
 @{
     ViewData["Title"] = "Index";
 }
 
-<h2>@Model.Providers.Name</h2>
+
+
+
+@if (ViewBag.providers.Count == 0)
+{
+    <p> No Provider.</p>
+}
+else
+{
+    <ul>
+        @foreach (var provider in ViewBag.providers)
+        {
+            @provider.Name
+            @provider.Lga
+            @provider.State
+        }
+    </ul>
+    @ViewBag.BillsCaptured
+}
+
+
+
+
 

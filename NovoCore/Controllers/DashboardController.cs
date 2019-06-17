@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using NovoClasses.Models;
 using NovoCore.Data;
 using NovoCore.Models;
 using NovoCore.ViewModel;
@@ -13,6 +14,8 @@ namespace NovoCore.Controllers
     //[Route("api/[Controller]")]
     public class DashboardController : Controller
     {
+       
+       
         private ApplicationDbContext _context;
         public DashboardController(ApplicationDbContext context)
         {
@@ -62,7 +65,7 @@ namespace NovoCore.Controllers
                 providerInDb.Name = provider.Name;
                 providerInDb.Address = provider.Address;
                 providerInDb.Area = provider.Area;
-                providerInDb.ProviderAssignee = provider.ProviderAssignee;
+                providerInDb.Assignee = provider.Assignee;
 
             }
             _context.SaveChanges();
@@ -71,19 +74,19 @@ namespace NovoCore.Controllers
         }
 
        // [HttpGet]
-        public ViewResult Index()
+        public ActionResult Index()
         {
 
             ViewBag.BillsCaptured = _context.ClaimBatch.Count(x => x.ProviderId == 40985);
             //var providers = _context.Provider 
-            var providers = _context.Provider
-                .Include(l => l.Lga)
-                .Include(s => s.State)
+            ViewBag.providers = _context.Provider
+              //  .Include(l => l.Lga)
+               // .Include(s => s.State)
                 .Include(p => p.ProviderServices)
                 .ToList();
 
             //return Json(providers);
-            return View(providers);
+            return View();
         }
 
       /*  [HttpGet]
@@ -128,7 +131,7 @@ namespace NovoCore.Controllers
                 return BadRequest(ModelState);
             }
 
-            var provider = _context.Provider.Include(p => p.State).SingleOrDefault(p => p.Id == id);
+            var provider = _context.Provider.Include(p => p.ProvideraccountId).SingleOrDefault(p => p.Id == id);
 
             if (provider == null)
             {

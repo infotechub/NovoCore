@@ -109,6 +109,1129 @@ namespace NovoCore.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("NovoClasses.Models.AuthorizationRequest", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("CreatedOn");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool>("IsDeleted");
+
+                    b.Property<DateTime>("UpdatedOn");
+
+                    b.Property<string>("company");
+
+                    b.Property<string>("diagnosis");
+
+                    b.Property<string>("fullname");
+
+                    b.Property<bool>("isnew");
+
+                    b.Property<string>("policynumber");
+
+                    b.Property<string>("providerName");
+
+                    b.Property<int>("providerid");
+
+                    b.Property<string>("reasonforcode");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("AuthorizationRequest");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.Bank", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("CreatedOn");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool>("IsDeleted");
+
+                    b.Property<string>("Name");
+
+                    b.Property<DateTime>("UpdatedOn");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Bank");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.Benefit", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Benefitcategory");
+
+                    b.Property<string>("Benefitlimit");
+
+                    b.Property<string>("CategoryName");
+
+                    b.Property<DateTime>("CreatedOn");
+
+                    b.Property<string>("Description");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool>("IsDeleted");
+
+                    b.Property<string>("Name");
+
+                    b.Property<bool>("Status");
+
+                    b.Property<DateTime>("UpdatedOn");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Benefit");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.BenefitsCategory", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Code");
+
+                    b.Property<DateTime>("CreatedOn");
+
+                    b.Property<string>("Description");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool>("IsDeleted");
+
+                    b.Property<string>("Name");
+
+                    b.Property<string>("Servicetype");
+
+                    b.Property<bool>("Status");
+
+                    b.Property<DateTime>("UpdatedOn");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("BenefitsCategory");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.Claim", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool>("Admission");
+
+                    b.Property<DateTime>("AdmissionDate");
+
+                    b.Property<bool>("AllprescibedDrugs");
+
+                    b.Property<string>("AreaOfSpecialty");
+
+                    b.Property<string>("AreaOfSpecialtyforspecialist");
+
+                    b.Property<int>("ClaimBatchId");
+
+                    b.Property<string>("ClaimsSerialNo");
+
+                    b.Property<string>("ClientsideID");
+
+                    b.Property<DateTime>("CreatedOn");
+
+                    b.Property<string>("Diagnosis");
+
+                    b.Property<DateTime>("DischargeDate");
+
+                    b.Property<DateTime>("DoctorSignecDate");
+
+                    b.Property<bool>("DoctorSigned");
+
+                    b.Property<string>("DoctorsId");
+
+                    b.Property<string>("DoctorsName");
+
+                    b.Property<string>("Durationoftreatment");
+
+                    b.Property<string>("EVSCode");
+
+                    b.Property<string>("EnrolleePlan");
+
+                    b.Property<DateTime>("EnrolleeSignDate");
+
+                    b.Property<int>("Enrolleeid");
+
+                    b.Property<bool>("Feeding");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool>("IsDeleted");
+
+                    b.Property<bool>("LaboratoryInvestigation");
+
+                    b.Property<int>("MyUserId");
+
+                    b.Property<string>("Note");
+
+                    b.Property<int>("ProviderId");
+
+                    b.Property<DateTime>("ReVettedDate");
+
+                    b.Property<int>("RevettedBy");
+
+                    b.Property<DateTime>("ServiceDate");
+
+                    b.Property<string>("Signature");
+
+                    b.Property<bool>("SubmitByProvider");
+
+                    b.Property<string>("Tag");
+
+                    b.Property<string>("TreatmentCode");
+
+                    b.Property<string>("TreatmentGiven");
+
+                    b.Property<DateTime>("UpdatedOn");
+
+                    b.Property<DateTime>("VettedDate");
+
+                    b.Property<int>("capturedBy");
+
+                    b.Property<string>("capturedName");
+
+                    b.Property<string>("diagnosticsIDString");
+
+                    b.Property<int>("enrolleeCompanyId");
+
+                    b.Property<string>("enrolleeCompanyName");
+
+                    b.Property<string>("enrolleeFullname");
+
+                    b.Property<string>("enrolleeGender");
+
+                    b.Property<string>("enrolleePolicyNumber");
+
+                    b.Property<bool>("enrolleeSigned");
+
+                    b.Property<string>("enrolleeage");
+
+                    b.Property<string>("ipaddressofprovider");
+
+                    b.Property<string>("referalCode");
+
+                    b.Property<string>("specialistName");
+
+                    b.Property<DateTime>("specialistSignecDate");
+
+                    b.Property<bool>("specialistSigned");
+
+                    b.Property<string>("specialistphonenumber");
+
+                    b.Property<string>("status");
+
+                    b.Property<int>("vettedBy");
+
+                    b.Property<string>("vettedName");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ClaimBatchId");
+
+                    b.ToTable("Claim");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.ClaimBatch", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<decimal>("AmountPaid");
+
+                    b.Property<string>("AuthorizationNote");
+
+                    b.Property<string>("AuthorizationStatus");
+
+                    b.Property<int>("AuthorizedBy");
+
+                    b.Property<DateTime>("AuthorizedDate");
+
+                    b.Property<string>("Batch");
+
+                    b.Property<DateTime>("CreatedOn");
+
+                    b.Property<string>("DeletionNote");
+
+                    b.Property<string>("DestBankAccountNo");
+
+                    b.Property<string>("DestBankName");
+
+                    b.Property<DateTime>("DisapprovalDate");
+
+                    b.Property<string>("DisapprovalNote");
+
+                    b.Property<int>("DisapprovedBy");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool>("IsDeleted");
+
+                    b.Property<int>("ProviderId");
+
+                    b.Property<string>("ProviderName");
+
+                    b.Property<DateTime>("SubmitedForPaymentDate");
+
+                    b.Property<DateTime>("SubmitedForReviewDate");
+
+                    b.Property<DateTime>("UpdatedOn");
+
+                    b.Property<DateTime>("VetDate");
+
+                    b.Property<string>("chequeno");
+
+                    b.Property<int>("claimscountfromclient");
+
+                    b.Property<DateTime>("datepaymentadvicesent");
+
+                    b.Property<bool>("isremote");
+
+                    b.Property<int>("markpaidby");
+
+                    b.Property<int>("month");
+
+                    b.Property<string>("paidby");
+
+                    b.Property<bool>("paymentadvicesent");
+
+                    b.Property<int>("paymentbatchId");
+
+                    b.Property<DateTime>("paymentdate");
+
+                    b.Property<string>("paymentmethod");
+
+                    b.Property<string>("paymentmethodstring");
+
+                    b.Property<string>("paymentref");
+
+                    b.Property<string>("remark");
+
+                    b.Property<DateTime>("reviewDate");
+
+                    b.Property<int>("reviewedBy");
+
+                    b.Property<string>("sourceBankAccountNo");
+
+                    b.Property<string>("sourceBankName");
+
+                    b.Property<string>("status");
+
+                    b.Property<int>("submitedPaymentbyUser");
+
+                    b.Property<int>("submitedReviewbyUser");
+
+                    b.Property<int>("submitedVetbyUser");
+
+                    b.Property<int>("year");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("paymentbatchId");
+
+                    b.ToTable("ClaimBatch");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.ClaimDrug", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("ClaimId");
+
+                    b.Property<DateTime>("CreatedOn");
+
+                    b.Property<string>("DrugDescription");
+
+                    b.Property<int>("DrugId");
+
+                    b.Property<string>("DrugName");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<decimal>("InitialAmount");
+
+                    b.Property<bool>("IsDeleted");
+
+                    b.Property<string>("Quantity");
+
+                    b.Property<DateTime>("UpdatedOn");
+
+                    b.Property<decimal>("VettedAmount");
+
+                    b.Property<string>("VettingComment");
+
+                    b.Property<decimal>("costofdrug");
+
+                    b.Property<bool>("flagred");
+
+                    b.Property<string>("rate");
+
+                    b.Property<string>("status");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ClaimId");
+
+                    b.ToTable("ClaimDrug");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.ClaimService", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("ClaimId");
+
+                    b.Property<DateTime>("CreatedOn");
+
+                    b.Property<string>("Duration");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<decimal>("InitialAmount");
+
+                    b.Property<bool>("IsDeleted");
+
+                    b.Property<string>("ServiceDescription");
+
+                    b.Property<int>("ServiceId");
+
+                    b.Property<string>("ServiceName");
+
+                    b.Property<DateTime>("UpdatedOn");
+
+                    b.Property<decimal>("VettedAmount");
+
+                    b.Property<string>("VettingComment");
+
+                    b.Property<decimal>("costofdrug");
+
+                    b.Property<bool>("flagred");
+
+                    b.Property<string>("rate");
+
+                    b.Property<string>("status");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ClaimId");
+
+                    b.ToTable("ClaimService");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.Company", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Address");
+
+                    b.Property<string>("AuthorizationNote");
+
+                    b.Property<int>("AuthorizationStatus");
+
+                    b.Property<int>("AuthorizedBy");
+
+                    b.Property<DateTime>("AuthorizedDate");
+
+                    b.Property<string>("City");
+
+                    b.Property<string>("Code");
+
+                    b.Property<int>("CompanyListPageId");
+
+                    b.Property<string>("CreatedBy");
+
+                    b.Property<DateTime>("CreatedOn");
+
+                    b.Property<string>("DeletionNote");
+
+                    b.Property<string>("Description");
+
+                    b.Property<DateTime>("DisapprovalDate");
+
+                    b.Property<string>("DisapprovalNote");
+
+                    b.Property<int>("DisapprovedBy");
+
+                    b.Property<string>("Email");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool>("IsDeleted");
+
+                    b.Property<string>("LogoLink");
+
+                    b.Property<int>("Logoid");
+
+                    b.Property<string>("Name");
+
+                    b.Property<long>("Parentid");
+
+                    b.Property<string>("PhoneNumber");
+
+                    b.Property<string>("Plans");
+
+                    b.Property<int>("RegAgeLimit");
+
+                    b.Property<long>("Stateid");
+
+                    b.Property<bool>("Status");
+
+                    b.Property<int>("SubscriptionStatus");
+
+                    b.Property<int>("SubsidiaryId");
+
+                    b.Property<DateTime>("UpdatedOn");
+
+                    b.Property<bool>("WeboperationMode");
+
+                    b.Property<string>("Website");
+
+                    b.Property<bool>("isRenewal");
+
+                    b.Property<string>("regCode");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Company");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.CompanyBranch", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Branch");
+
+                    b.Property<DateTime>("CreatedOn");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool>("IsDeleted");
+
+                    b.Property<int>("Statecode");
+
+                    b.Property<DateTime>("UpdatedOn");
+
+                    b.Property<int>("companyId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("companyId");
+
+                    b.ToTable("CompanyBranch");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.CompanySubsidiary", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("CreatedBy");
+
+                    b.Property<DateTime>("CreatedOn");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool>("IsDeleted");
+
+                    b.Property<int>("ParentcompanyId");
+
+                    b.Property<string>("Subsidaryname");
+
+                    b.Property<string>("Subsidaryprofile");
+
+                    b.Property<DateTime>("UpdatedOn");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CompanySubsidiary");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.EnrolleePassport", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("CreatedOn");
+
+                    b.Property<int>("Enrolleeid");
+
+                    b.Property<string>("Enrolleepolicyno");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<byte[]>("Imgraw");
+
+                    b.Property<bool>("IsDeleted");
+
+                    b.Property<DateTime>("UpdatedOn");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("EnrolleePassport");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.IncomingClaim", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("CapturerList");
+
+                    b.Property<int>("ClaimBatchId");
+
+                    b.Property<DateTime>("CreatedOn");
+
+                    b.Property<DateTime>("DateReceived");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool>("IsDeleted");
+
+                    b.Property<bool>("IsRemoteSubmission");
+
+                    b.Property<string>("Note");
+
+                    b.Property<DateTime>("UpdatedOn");
+
+                    b.Property<string>("caption");
+
+                    b.Property<DateTime>("captureStarted");
+
+                    b.Property<DateTime>("dateTransferAcknowledged");
+
+                    b.Property<string>("deliveredby");
+
+                    b.Property<DateTime>("fullDateofbill");
+
+                    b.Property<int>("month");
+
+                    b.Property<string>("month_string");
+
+                    b.Property<int>("noofencounter");
+
+                    b.Property<int>("providerid");
+
+                    b.Property<int>("receivedBy");
+
+                    b.Property<string>("status");
+
+                    b.Property<decimal>("totalamount");
+
+                    b.Property<int>("transferedTo");
+
+                    b.Property<int>("transferstatus");
+
+                    b.Property<int>("year");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ClaimBatchId");
+
+                    b.ToTable("IncomingClaims");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.Lga", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Code");
+
+                    b.Property<DateTime>("CreatedOn");
+
+                    b.Property<int>("DelistedProviderPageId");
+
+                    b.Property<int>("EnrolleeDetailsPageId");
+
+                    b.Property<int>("EnrolleeListPageId");
+
+                    b.Property<int>("EnrolleePageId");
+
+                    b.Property<int>("EnrolleeRegPageId");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool>("IsDeleted");
+
+                    b.Property<string>("Name");
+
+                    b.Property<int>("ProviderPageId");
+
+                    b.Property<long>("State");
+
+                    b.Property<bool>("Status");
+
+                    b.Property<DateTime>("UpdatedOn");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Lga");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.NovoAuthorizationCode", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool>("AcknowledgedByAuthorizer");
+
+                    b.Property<DateTime>("AdmissionDate");
+
+                    b.Property<int>("Authorizedby");
+
+                    b.Property<DateTime>("CreatedOn");
+
+                    b.Property<int>("DaysApprovded");
+
+                    b.Property<string>("Diagnosis");
+
+                    b.Property<DateTime>("DischargeDate");
+
+                    b.Property<string>("EnrolleeCompany");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool>("IsDeleted");
+
+                    b.Property<bool>("IsNHIS");
+
+                    b.Property<bool>("Isadmission");
+
+                    b.Property<string>("Note");
+
+                    b.Property<string>("Plan");
+
+                    b.Property<string>("TypeofAuthorization");
+
+                    b.Property<DateTime>("UpdatedOn");
+
+                    b.Property<string>("admissionStatus");
+
+                    b.Property<string>("authorizationCode");
+
+                    b.Property<bool>("deliverysmssent");
+
+                    b.Property<int>("enrolleeAge");
+
+                    b.Property<int>("enrolleeID");
+
+                    b.Property<string>("enrolleeName");
+
+                    b.Property<int>("generatedby");
+
+                    b.Property<bool>("isdelivery");
+
+                    b.Property<string>("policyNumber");
+
+                    b.Property<int>("provider");
+
+                    b.Property<string>("requestername");
+
+                    b.Property<string>("requesterphone");
+
+                    b.Property<string>("treatmentAuthorized");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("AuthorizationCode");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.PaymentBatch", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("CreatedOn");
+
+                    b.Property<string>("Description");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool>("IsDeleted");
+
+                    b.Property<string>("Note");
+
+                    b.Property<string>("Title");
+
+                    b.Property<DateTime>("UpdatedOn");
+
+                    b.Property<int>("createdBy");
+
+                    b.Property<DateTime>("datepaymentcompleted");
+
+                    b.Property<DateTime>("datepaymentstarted");
+
+                    b.Property<int>("paidby");
+
+                    b.Property<string>("status");
+
+                    b.Property<int>("terminatedby");
+
+                    b.Property<DateTime>("terminationdate");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("PaymentBatch");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.Provider", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Address");
+
+                    b.Property<string>("Area");
+
+                    b.Property<int>("Assignee");
+
+                    b.Property<string>("AuthorizationNote");
+
+                    b.Property<int>("AuthorizationStatus");
+
+                    b.Property<int>("AuthorizedBy");
+
+                    b.Property<DateTime>("AuthorizedDate");
+
+                    b.Property<string>("Category");
+
+                    b.Property<string>("Code");
+
+                    b.Property<string>("CompanyConsession");
+
+                    b.Property<string>("CreatedBy");
+
+                    b.Property<DateTime>("CreatedOn");
+
+                    b.Property<string>("DeletionNote");
+
+                    b.Property<string>("DelistNote");
+
+                    b.Property<int>("DelistedProviderPageId");
+
+                    b.Property<DateTime>("DisapprovalDate");
+
+                    b.Property<string>("DisapprovalNote");
+
+                    b.Property<int>("DisapprovedBy");
+
+                    b.Property<string>("Email");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool>("IsDeleted");
+
+                    b.Property<int>("LgaId");
+
+                    b.Property<string>("Name");
+
+                    b.Property<long>("Parentid");
+
+                    b.Property<string>("PaymentEmail1");
+
+                    b.Property<string>("PaymentEmail2");
+
+                    b.Property<string>("Phone");
+
+                    b.Property<string>("Phone2");
+
+                    b.Property<int>("ProviderApprovalPageId");
+
+                    b.Property<int>("ProviderListPageId");
+
+                    b.Property<string>("ProviderTariffs");
+
+                    b.Property<int>("Provideraccount2Id");
+
+                    b.Property<int>("ProvideraccountId");
+
+                    b.Property<string>("Providergpscordinate");
+
+                    b.Property<string>("Providerplans");
+
+                    b.Property<string>("Providerservices");
+
+                    b.Property<int>("StateId");
+
+                    b.Property<bool>("Status");
+
+                    b.Property<string>("SubCode");
+
+                    b.Property<int>("TariffContentPageId");
+
+                    b.Property<int>("TariffPageId");
+
+                    b.Property<DateTime>("UpdatedOn");
+
+                    b.Property<string>("Website");
+
+                    b.Property<int>("delistedBy");
+
+                    b.Property<DateTime>("delisteddate");
+
+                    b.Property<bool>("isDelisted");
+
+                    b.Property<int>("providerloginId");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Provider");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.ProviderAccount", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("AuthorizationNote");
+
+                    b.Property<int>("AuthorizationStatus");
+
+                    b.Property<int>("AuthorizedBy");
+
+                    b.Property<DateTime>("AuthorizedDate");
+
+                    b.Property<int>("BankId");
+
+                    b.Property<string>("Bankaccountname");
+
+                    b.Property<string>("Bankaccountnum");
+
+                    b.Property<string>("Bankbranch");
+
+                    b.Property<DateTime>("CreatedOn");
+
+                    b.Property<DateTime>("DisapprovalDate");
+
+                    b.Property<string>("DisapprovalNote");
+
+                    b.Property<int>("DisapprovedBy");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool>("IsDeleted");
+
+                    b.Property<string>("Note");
+
+                    b.Property<int>("Providerid");
+
+                    b.Property<bool>("Status");
+
+                    b.Property<DateTime>("UpdatedOn");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ProviderAccount");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.ProviderAssignee", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("AssignedBy");
+
+                    b.Property<DateTime>("CreatedOn");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool>("IsDeleted");
+
+                    b.Property<int>("Providerid");
+
+                    b.Property<bool>("Status");
+
+                    b.Property<DateTime>("UpdatedOn");
+
+                    b.Property<int>("Userid");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ProviderAssignee");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.ProviderLogin", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Altemail");
+
+                    b.Property<string>("Altemail2");
+
+                    b.Property<string>("Altemail3");
+
+                    b.Property<DateTime>("CreatedOn");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool>("IsDeleted");
+
+                    b.Property<DateTime>("LastClaimSubmited");
+
+                    b.Property<int>("ProviderId");
+
+                    b.Property<DateTime>("UpdatedOn");
+
+                    b.Property<bool>("active");
+
+                    b.Property<string>("browserid");
+
+                    b.Property<string>("email");
+
+                    b.Property<DateTime>("lastlogin");
+
+                    b.Property<string>("lastloginId");
+
+                    b.Property<string>("password");
+
+                    b.Property<bool>("passwordchange");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ProviderLogin");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.ProviderRating", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("CreatedOn");
+
+                    b.Property<string>("Email");
+
+                    b.Property<string>("FeedBack");
+
+                    b.Property<string>("Fullname");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool>("IsDeleted");
+
+                    b.Property<string>("PhoneNumber");
+
+                    b.Property<DateTime>("UpdatedOn");
+
+                    b.Property<DateTime>("dateaccessed");
+
+                    b.Property<int>("enrolleeid");
+
+                    b.Property<int>("providerID");
+
+                    b.Property<int>("rating");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ProviderRating");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.ProviderService", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("CreatedOn");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool>("IsDeleted");
+
+                    b.Property<string>("Name");
+
+                    b.Property<string>("OpeningDays");
+
+                    b.Property<DateTime>("UpdatedOn");
+
+                    b.Property<string>("description");
+
+                    b.Property<int>("providerId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("providerId");
+
+                    b.ToTable("ProviderServices");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.State", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Code");
+
+                    b.Property<DateTime>("CreatedOn");
+
+                    b.Property<int>("DelistedProviderPageId");
+
+                    b.Property<int>("EnrolleeDetailsPageId");
+
+                    b.Property<int>("EnrolleeListPageId");
+
+                    b.Property<int>("EnrolleePageId");
+
+                    b.Property<int>("EnrolleeRegPageId");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool>("IsDeleted");
+
+                    b.Property<string>("Name");
+
+                    b.Property<int>("ProviderPageId");
+
+                    b.Property<bool>("Status");
+
+                    b.Property<DateTime>("UpdatedOn");
+
+                    b.Property<long>("Zone");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("State");
+                });
+
             modelBuilder.Entity("NovoCore.Models.ApplicationRole", b =>
                 {
                     b.Property<string>("Id")
@@ -210,702 +1333,6 @@ namespace NovoCore.Data.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("NovoCore.Models.AuthorizationRequest", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Company");
-
-                    b.Property<DateTime?>("CreatedOn");
-
-                    b.Property<string>("Diagnosis");
-
-                    b.Property<int?>("EnrolleeCompanyId");
-
-                    b.Property<int?>("EnrolleeId");
-
-                    b.Property<string>("Fullname");
-
-                    b.Property<Guid>("Guid");
-
-                    b.Property<bool?>("IsDeleted");
-
-                    b.Property<bool?>("Isnew");
-
-                    b.Property<string>("Policynumber");
-
-                    b.Property<int?>("ProviderId");
-
-                    b.Property<string>("ProviderName");
-
-                    b.Property<string>("Reasonforcode");
-
-                    b.Property<DateTime?>("UpdatedOn");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("EnrolleeCompanyId");
-
-                    b.HasIndex("EnrolleeId");
-
-                    b.HasIndex("ProviderId");
-
-                    b.ToTable("AuthorizationRequest");
-                });
-
-            modelBuilder.Entity("NovoCore.Models.Bank", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("AddedBy");
-
-                    b.Property<DateTime?>("CreatedOn");
-
-                    b.Property<Guid>("Guid");
-
-                    b.Property<bool?>("IsDeleted");
-
-                    b.Property<string>("Name");
-
-                    b.Property<DateTime?>("UpdatedOn");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Bank");
-                });
-
-            modelBuilder.Entity("NovoCore.Models.Benefit", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("AddedBy");
-
-                    b.Property<string>("Benefitlimit");
-
-                    b.Property<int?>("BenefitsCategoryId");
-
-                    b.Property<string>("CategoryName");
-
-                    b.Property<DateTime?>("CreatedOn");
-
-                    b.Property<string>("Description");
-
-                    b.Property<Guid>("Guid");
-
-                    b.Property<bool?>("IsDeleted");
-
-                    b.Property<string>("Name");
-
-                    b.Property<bool?>("Status");
-
-                    b.Property<DateTime?>("UpdatedOn");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("BenefitsCategoryId");
-
-                    b.ToTable("Benefit");
-                });
-
-            modelBuilder.Entity("NovoCore.Models.BenefitsCategory", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("AddedBy");
-
-                    b.Property<string>("Code");
-
-                    b.Property<DateTime?>("CreatedOn");
-
-                    b.Property<string>("Description");
-
-                    b.Property<Guid>("Guid");
-
-                    b.Property<bool?>("IsDeleted");
-
-                    b.Property<string>("Name");
-
-                    b.Property<string>("Servicetype");
-
-                    b.Property<bool?>("Status");
-
-                    b.Property<DateTime?>("UpdatedOn");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("BenefitsCategory");
-                });
-
-            modelBuilder.Entity("NovoCore.Models.Claim", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("AddedBy");
-
-                    b.Property<bool?>("Admission");
-
-                    b.Property<DateTime?>("AdmissionDate");
-
-                    b.Property<bool?>("AllprescibedDrugs");
-
-                    b.Property<string>("AreaOfSpecialty");
-
-                    b.Property<string>("AreaOfSpecialtyforspecialist");
-
-                    b.Property<int?>("CapturedBy");
-
-                    b.Property<int?>("ClaimBatchId");
-
-                    b.Property<string>("ClaimsSerialNo");
-
-                    b.Property<DateTime?>("CreatedOn");
-
-                    b.Property<string>("Diagnosis");
-
-                    b.Property<DateTime?>("DischargeDate");
-
-                    b.Property<DateTime?>("DoctorSignecDate");
-
-                    b.Property<bool?>("DoctorSigned");
-
-                    b.Property<string>("DoctorsId");
-
-                    b.Property<string>("DoctorsName");
-
-                    b.Property<string>("Durationoftreatment");
-
-                    b.Property<int?>("EnrolleeCompanyId");
-
-                    b.Property<string>("EnrolleeCompanyName");
-
-                    b.Property<string>("EnrolleeFullname");
-
-                    b.Property<string>("EnrolleeGender");
-
-                    b.Property<string>("EnrolleePlan");
-
-                    b.Property<string>("EnrolleePolicyNumber");
-
-                    b.Property<DateTime?>("EnrolleeSignDate");
-
-                    b.Property<bool?>("EnrolleeSigned");
-
-                    b.Property<string>("Enrolleeage");
-
-                    b.Property<int?>("Enrolleeid");
-
-                    b.Property<string>("Evscode");
-
-                    b.Property<bool?>("Feeding");
-
-                    b.Property<Guid>("Guid");
-
-                    b.Property<string>("Ipaddressofprovider");
-
-                    b.Property<bool?>("IsDeleted");
-
-                    b.Property<bool?>("LaboratoryInvestigation");
-
-                    b.Property<string>("Note");
-
-                    b.Property<int?>("ProviderId");
-
-                    b.Property<DateTime?>("ReVettedDate");
-
-                    b.Property<string>("ReferalCode");
-
-                    b.Property<int?>("RevettedBy");
-
-                    b.Property<DateTime?>("ServiceDate");
-
-                    b.Property<string>("Signature");
-
-                    b.Property<string>("SpecialistName");
-
-                    b.Property<DateTime?>("SpecialistSignecDate");
-
-                    b.Property<bool?>("SpecialistSigned");
-
-                    b.Property<string>("Specialistphonenumber");
-
-                    b.Property<string>("Status");
-
-                    b.Property<bool?>("SubmitByProvider");
-
-                    b.Property<string>("Tag");
-
-                    b.Property<string>("TreatmentCode");
-
-                    b.Property<string>("TreatmentGiven");
-
-                    b.Property<DateTime?>("UpdatedOn");
-
-                    b.Property<int?>("VettedBy");
-
-                    b.Property<DateTime?>("VettedDate");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ClaimBatchId");
-
-                    b.HasIndex("Enrolleeid");
-
-                    b.HasIndex("ProviderId");
-
-                    b.ToTable("Claim");
-                });
-
-            modelBuilder.Entity("NovoCore.Models.ClaimBatch", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("AddedBy");
-
-                    b.Property<decimal?>("AmountPaid");
-
-                    b.Property<string>("AuthorizationNote");
-
-                    b.Property<string>("AuthorizationStatus");
-
-                    b.Property<int?>("AuthorizedBy");
-
-                    b.Property<DateTime?>("AuthorizedDate");
-
-                    b.Property<string>("Batch");
-
-                    b.Property<string>("Chequeno");
-
-                    b.Property<int?>("Claimscountfromclient");
-
-                    b.Property<DateTime?>("CreatedOn");
-
-                    b.Property<DateTime?>("Datepaymentadvicesent");
-
-                    b.Property<string>("DeletionNote");
-
-                    b.Property<string>("DestBankAccountNo");
-
-                    b.Property<string>("DestBankName");
-
-                    b.Property<DateTime?>("DisapprovalDate");
-
-                    b.Property<string>("DisapprovalNote");
-
-                    b.Property<int?>("DisapprovedBy");
-
-                    b.Property<Guid>("Guid");
-
-                    b.Property<bool?>("IsDeleted");
-
-                    b.Property<bool?>("Isremote");
-
-                    b.Property<int?>("Markpaidby");
-
-                    b.Property<int?>("Month");
-
-                    b.Property<string>("Name");
-
-                    b.Property<string>("Paidby");
-
-                    b.Property<bool?>("Paymentadvicesent");
-
-                    b.Property<int?>("PaymentbatchId");
-
-                    b.Property<DateTime?>("Paymentdate");
-
-                    b.Property<string>("Paymentmethod");
-
-                    b.Property<string>("Paymentmethodstring");
-
-                    b.Property<string>("Paymentref");
-
-                    b.Property<int?>("ProviderId");
-
-                    b.Property<string>("ProviderName");
-
-                    b.Property<string>("Remark");
-
-                    b.Property<DateTime?>("ReviewDate");
-
-                    b.Property<int?>("ReviewedBy");
-
-                    b.Property<string>("SourceBankAccountNo");
-
-                    b.Property<string>("SourceBankName");
-
-                    b.Property<string>("Status");
-
-                    b.Property<DateTime?>("SubmitedForPaymentDate");
-
-                    b.Property<DateTime?>("SubmitedForReviewDate");
-
-                    b.Property<int?>("SubmitedPaymentbyUser");
-
-                    b.Property<int?>("SubmitedReviewbyUser");
-
-                    b.Property<int?>("SubmitedVetbyUser");
-
-                    b.Property<DateTime?>("UpdatedOn");
-
-                    b.Property<DateTime?>("VetDate");
-
-                    b.Property<int?>("Year");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("PaymentbatchId");
-
-                    b.ToTable("ClaimBatch");
-                });
-
-            modelBuilder.Entity("NovoCore.Models.ClaimDrug", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int?>("ClaimId");
-
-                    b.Property<decimal?>("Costofdrug");
-
-                    b.Property<DateTime?>("CreatedOn");
-
-                    b.Property<string>("DrugDescription");
-
-                    b.Property<int?>("DrugId");
-
-                    b.Property<string>("DrugName");
-
-                    b.Property<bool?>("Flagred");
-
-                    b.Property<Guid>("Guid");
-
-                    b.Property<decimal?>("InitialAmount");
-
-                    b.Property<bool?>("IsDeleted");
-
-                    b.Property<string>("Quantity");
-
-                    b.Property<string>("Rate");
-
-                    b.Property<string>("Status");
-
-                    b.Property<DateTime?>("UpdatedOn");
-
-                    b.Property<decimal?>("VettedAmount");
-
-                    b.Property<string>("VettingComment");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ClaimId");
-
-                    b.ToTable("ClaimDrug");
-                });
-
-            modelBuilder.Entity("NovoCore.Models.ClaimService", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int?>("ClaimId");
-
-                    b.Property<decimal?>("Costofdrug");
-
-                    b.Property<DateTime?>("CreatedOn");
-
-                    b.Property<string>("Duration");
-
-                    b.Property<bool?>("Flagred");
-
-                    b.Property<Guid>("Guid");
-
-                    b.Property<decimal?>("InitialAmount");
-
-                    b.Property<bool?>("IsDeleted");
-
-                    b.Property<string>("Rate");
-
-                    b.Property<string>("ServiceDescription");
-
-                    b.Property<int?>("ServiceId");
-
-                    b.Property<string>("ServiceName");
-
-                    b.Property<string>("Status");
-
-                    b.Property<DateTime?>("UpdatedOn");
-
-                    b.Property<decimal?>("VettedAmount");
-
-                    b.Property<string>("VettingComment");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ClaimId");
-
-                    b.ToTable("ClaimService");
-                });
-
-            modelBuilder.Entity("NovoCore.Models.Company", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("AddedBy");
-
-                    b.Property<string>("Address");
-
-                    b.Property<string>("AuthorizationNote");
-
-                    b.Property<int?>("AuthorizationStatus");
-
-                    b.Property<int?>("AuthorizedBy");
-
-                    b.Property<DateTime?>("AuthorizedDate");
-
-                    b.Property<string>("City");
-
-                    b.Property<string>("Code");
-
-                    b.Property<string>("CreatedBy");
-
-                    b.Property<DateTime?>("CreatedOn");
-
-                    b.Property<string>("DeletionNote");
-
-                    b.Property<string>("Description");
-
-                    b.Property<DateTime?>("DisapprovalDate");
-
-                    b.Property<string>("DisapprovalNote");
-
-                    b.Property<int?>("DisapprovedBy");
-
-                    b.Property<string>("Email");
-
-                    b.Property<Guid>("Guid");
-
-                    b.Property<bool?>("IsDeleted");
-
-                    b.Property<bool?>("IsRenewal");
-
-                    b.Property<string>("LogoLink");
-
-                    b.Property<int?>("Logoid");
-
-                    b.Property<string>("Name");
-
-                    b.Property<long?>("Parentid");
-
-                    b.Property<string>("PhoneNumber");
-
-                    b.Property<string>("Plans");
-
-                    b.Property<int?>("RegAgeLimit");
-
-                    b.Property<string>("RegCode");
-
-                    b.Property<int?>("StateId");
-
-                    b.Property<bool?>("Status");
-
-                    b.Property<int?>("SubscriptionStatus");
-
-                    b.Property<DateTime?>("UpdatedOn");
-
-                    b.Property<string>("Website");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("StateId");
-
-                    b.ToTable("Company");
-                });
-
-            modelBuilder.Entity("NovoCore.Models.CompanyBranch", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("AddedBy");
-
-                    b.Property<int?>("Companyid");
-
-                    b.Property<int?>("CreatedBy");
-
-                    b.Property<DateTime?>("CreatedOn");
-
-                    b.Property<Guid>("Guid");
-
-                    b.Property<bool?>("IsDeleted");
-
-                    b.Property<string>("Subsidaryname");
-
-                    b.Property<string>("Subsidaryprofile");
-
-                    b.Property<DateTime?>("UpdatedOn");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("Companyid");
-
-                    b.ToTable("CompanyBranch");
-                });
-
-            modelBuilder.Entity("NovoCore.Models.Enrollee", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("Age");
-
-                    b.Property<int>("Bulkjobid");
-
-                    b.Property<int?>("CompanyId");
-
-                    b.Property<int>("Createdby");
-
-                    b.Property<DateTime?>("Dateexpunged");
-
-                    b.Property<DateTime?>("Datereceived");
-
-                    b.Property<DateTime>("Dob");
-
-                    b.Property<string>("Emailaddress");
-
-                    b.Property<string>("ExpungeNote");
-
-                    b.Property<int>("Expungedby");
-
-                    b.Property<bool>("HasRefPolicyNumber");
-
-                    b.Property<bool>("Hasactivesubscription");
-
-                    b.Property<bool>("Hasdependents");
-
-                    b.Property<bool>("IdCardPrinted");
-
-                    b.Property<bool>("Isexpundged");
-
-                    b.Property<int>("LastyearBirthdaymsgsent");
-
-                    b.Property<int?>("Lgaid");
-
-                    b.Property<int>("Maritalstatus");
-
-                    b.Property<string>("Mobilenumber");
-
-                    b.Property<string>("Mobilenumber2");
-
-                    b.Property<string>("Occupation");
-
-                    b.Property<string>("Othernames");
-
-                    b.Property<int>("Parentid");
-
-                    b.Property<int>("Parentrelationship");
-
-                    b.Property<string>("Policynumber");
-
-                    b.Property<string>("Preexistingmedicalhistory");
-
-                    b.Property<int>("Primaryprovider");
-
-                    b.Property<string>("RefPolicynumber");
-
-                    b.Property<string>("Residentialaddress");
-
-                    b.Property<int>("Sex");
-
-                    b.Property<string>("Specialidcardfield1");
-
-                    b.Property<string>("Specialidcardfield2");
-
-                    b.Property<string>("Specialidcardfield3");
-
-                    b.Property<int>("Sponsorshiptype");
-
-                    b.Property<string>("Sponsorshiptypenote");
-
-                    b.Property<string>("Sponsorshiptypeothername");
-
-                    b.Property<int?>("StaffId");
-
-                    b.Property<string>("StaffId1");
-
-                    b.Property<int?>("Stateid");
-
-                    b.Property<int>("Status");
-
-                    b.Property<int>("Subscriptionplanid");
-
-                    b.Property<string>("Surname");
-
-                    b.Property<string>("Title");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CompanyId");
-
-                    b.HasIndex("Lgaid");
-
-                    b.HasIndex("StaffId1");
-
-                    b.HasIndex("Stateid");
-
-                    b.ToTable("Enrollee");
-                });
-
-            modelBuilder.Entity("NovoCore.Models.EnrolleePassport", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime?>("CreatedOn");
-
-                    b.Property<int?>("Enrolleeid");
-
-                    b.Property<string>("Enrolleepolicyno");
-
-                    b.Property<Guid>("Guid");
-
-                    b.Property<byte[]>("Imgraw");
-
-                    b.Property<bool?>("IsDeleted");
-
-                    b.Property<string>("Name");
-
-                    b.Property<int?>("SiteId");
-
-                    b.Property<DateTime?>("UpdatedOn");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("Enrolleeid")
-                        .IsUnique()
-                        .HasFilter("[Enrolleeid] IS NOT NULL");
-
-                    b.ToTable("EnrolleePassport");
-                });
-
             modelBuilder.Entity("NovoCore.Models.FacilitiesAllowed", b =>
                 {
                     b.Property<int>("Id")
@@ -947,627 +1374,6 @@ namespace NovoCore.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("FacilitiesAllowed");
-                });
-
-            modelBuilder.Entity("NovoCore.Models.IncomingClaims", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Caption");
-
-                    b.Property<DateTime?>("CaptureStarted");
-
-                    b.Property<string>("CapturerList");
-
-                    b.Property<int?>("ClaimBatchId");
-
-                    b.Property<DateTime?>("CreatedOn");
-
-                    b.Property<DateTime?>("DateReceived");
-
-                    b.Property<DateTime?>("DateTransferAcknowledged");
-
-                    b.Property<string>("Deliveredby");
-
-                    b.Property<DateTime?>("FullDateofbill");
-
-                    b.Property<Guid>("Guid");
-
-                    b.Property<bool?>("IsDeleted");
-
-                    b.Property<bool?>("IsRemoteSubmission");
-
-                    b.Property<int?>("Month");
-
-                    b.Property<string>("MonthString");
-
-                    b.Property<int?>("Noofencounter");
-
-                    b.Property<string>("Note");
-
-                    b.Property<int?>("Providerid");
-
-                    b.Property<int?>("ReceivedBy");
-
-                    b.Property<string>("Status");
-
-                    b.Property<decimal?>("Totalamount");
-
-                    b.Property<int?>("TransferedTo");
-
-                    b.Property<int?>("Transferstatus");
-
-                    b.Property<DateTime?>("UpdatedOn");
-
-                    b.Property<string>("UserId");
-
-                    b.Property<int?>("Year");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ClaimBatchId");
-
-                    b.HasIndex("Providerid");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("IncomingClaims");
-                });
-
-            modelBuilder.Entity("NovoCore.Models.Lga", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Code");
-
-                    b.Property<DateTime?>("CreatedOn");
-
-                    b.Property<Guid>("Guid");
-
-                    b.Property<bool?>("IsDeleted");
-
-                    b.Property<string>("Name");
-
-                    b.Property<long?>("State");
-
-                    b.Property<bool?>("Status");
-
-                    b.Property<DateTime?>("UpdatedOn");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Lga");
-                });
-
-            modelBuilder.Entity("NovoCore.Models.NovoAuthorizationCode", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<bool?>("AcknowledgedByAuthorizer");
-
-                    b.Property<DateTime?>("AdmissionDate");
-
-                    b.Property<string>("AdmissionStatus");
-
-                    b.Property<string>("ApplicationUserId");
-
-                    b.Property<string>("AuthorizationCode");
-
-                    b.Property<int?>("Authorizedby");
-
-                    b.Property<DateTime?>("CreatedOn");
-
-                    b.Property<int?>("DaysApprovded");
-
-                    b.Property<bool?>("Deliverysmssent");
-
-                    b.Property<string>("Diagnosis");
-
-                    b.Property<DateTime?>("DischargeDate");
-
-                    b.Property<int?>("EnrolleeAge");
-
-                    b.Property<string>("EnrolleeCompany");
-
-                    b.Property<int?>("EnrolleeId");
-
-                    b.Property<string>("EnrolleeName");
-
-                    b.Property<int?>("Generatedby");
-
-                    b.Property<Guid>("Guid");
-
-                    b.Property<bool?>("IsDeleted");
-
-                    b.Property<bool?>("IsNhis");
-
-                    b.Property<bool?>("Isadmission");
-
-                    b.Property<bool?>("Isdelivery");
-
-                    b.Property<string>("Note");
-
-                    b.Property<string>("Plan");
-
-                    b.Property<string>("PolicyNumber");
-
-                    b.Property<int?>("ProviderId");
-
-                    b.Property<string>("Requestername");
-
-                    b.Property<string>("Requesterphone");
-
-                    b.Property<string>("TreatmentAuthorized");
-
-                    b.Property<string>("TypeofAuthorization");
-
-                    b.Property<DateTime?>("UpdatedOn");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ApplicationUserId");
-
-                    b.HasIndex("EnrolleeId");
-
-                    b.HasIndex("ProviderId");
-
-                    b.ToTable("AuthorizationCode");
-                });
-
-            modelBuilder.Entity("NovoCore.Models.PaymentBatch", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int?>("CreatedBy");
-
-                    b.Property<DateTime?>("CreatedOn");
-
-                    b.Property<DateTime?>("Datepaymentcompleted");
-
-                    b.Property<DateTime?>("Datepaymentstarted");
-
-                    b.Property<string>("Description");
-
-                    b.Property<Guid>("Guid");
-
-                    b.Property<bool?>("IsDeleted");
-
-                    b.Property<string>("Note");
-
-                    b.Property<int?>("Paidby");
-
-                    b.Property<string>("Status");
-
-                    b.Property<int?>("Terminatedby");
-
-                    b.Property<DateTime?>("Terminationdate");
-
-                    b.Property<string>("Title");
-
-                    b.Property<DateTime?>("UpdatedOn");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("PaymentBatch");
-                });
-
-            modelBuilder.Entity("NovoCore.Models.Provider", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Address");
-
-                    b.Property<string>("Area");
-
-                    b.Property<string>("AuthorizationNote");
-
-                    b.Property<string>("AuthorizationStatus");
-
-                    b.Property<string>("AuthorizedBy");
-
-                    b.Property<DateTime?>("AuthorizedDate");
-
-                    b.Property<string>("Category");
-
-                    b.Property<string>("Code");
-
-                    b.Property<string>("CompanyConsession");
-
-                    b.Property<string>("CreatedBy");
-
-                    b.Property<DateTime?>("CreatedOn");
-
-                    b.Property<string>("DelistNote");
-
-                    b.Property<string>("DelistedBy");
-
-                    b.Property<int?>("DelistedProviderPageId");
-
-                    b.Property<DateTime?>("Delisteddate");
-
-                    b.Property<DateTime?>("DisapprovalDate");
-
-                    b.Property<string>("DisapprovalNote");
-
-                    b.Property<string>("DisapprovedBy");
-
-                    b.Property<string>("Email");
-
-                    b.Property<Guid>("Guid");
-
-                    b.Property<bool?>("IsDeleted");
-
-                    b.Property<bool?>("IsDelisted");
-
-                    b.Property<int?>("LgaId");
-
-                    b.Property<string>("Name");
-
-                    b.Property<long?>("Parentid");
-
-                    b.Property<string>("PaymentEmail1");
-
-                    b.Property<string>("PaymentEmail2");
-
-                    b.Property<string>("Phone");
-
-                    b.Property<string>("Phone2");
-
-                    b.Property<string>("ProviderTariffs");
-
-                    b.Property<int?>("Provideraccount2Id");
-
-                    b.Property<string>("Providergpscordinate");
-
-                    b.Property<string>("Providerplans");
-
-                    b.Property<string>("Providerservices");
-
-                    b.Property<int?>("SiteId");
-
-                    b.Property<int?>("StateId");
-
-                    b.Property<bool?>("Status");
-
-                    b.Property<string>("SubCode");
-
-                    b.Property<DateTime?>("UpdatedOn");
-
-                    b.Property<string>("Website");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("LgaId");
-
-                    b.HasIndex("StateId");
-
-                    b.ToTable("Provider");
-                });
-
-            modelBuilder.Entity("NovoCore.Models.ProviderAccount", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("AddedBy");
-
-                    b.Property<string>("AuthorizationNote");
-
-                    b.Property<int?>("AuthorizationStatus");
-
-                    b.Property<int?>("AuthorizedBy");
-
-                    b.Property<DateTime?>("AuthorizedDate");
-
-                    b.Property<int>("BankId");
-
-                    b.Property<string>("Bankaccountname");
-
-                    b.Property<string>("Bankaccountnum");
-
-                    b.Property<string>("Bankbranch");
-
-                    b.Property<DateTime?>("CreatedOn");
-
-                    b.Property<DateTime?>("DisapprovalDate");
-
-                    b.Property<string>("DisapprovalNote");
-
-                    b.Property<int?>("DisapprovedBy");
-
-                    b.Property<Guid>("Guid");
-
-                    b.Property<bool?>("IsDeleted");
-
-                    b.Property<string>("Name");
-
-                    b.Property<string>("Note");
-
-                    b.Property<int?>("Providerid");
-
-                    b.Property<int?>("SiteId");
-
-                    b.Property<bool?>("Status");
-
-                    b.Property<DateTime?>("UpdatedOn");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("BankId");
-
-                    b.HasIndex("Providerid");
-
-                    b.ToTable("ProviderAccount");
-                });
-
-            modelBuilder.Entity("NovoCore.Models.ProviderAssignee", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("AddedBy");
-
-                    b.Property<int?>("AssignedBy");
-
-                    b.Property<DateTime?>("CreatedOn");
-
-                    b.Property<Guid>("Guid");
-
-                    b.Property<bool?>("IsDeleted");
-
-                    b.Property<int>("Providerid");
-
-                    b.Property<bool?>("Status");
-
-                    b.Property<DateTime?>("UpdatedOn");
-
-                    b.Property<string>("UserId");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("Providerid")
-                        .IsUnique();
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("ProviderAssignee");
-                });
-
-            modelBuilder.Entity("NovoCore.Models.ProviderLogin", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<bool?>("Active");
-
-                    b.Property<string>("AddedBy");
-
-                    b.Property<string>("Altemail");
-
-                    b.Property<string>("Altemail2");
-
-                    b.Property<string>("Altemail3");
-
-                    b.Property<string>("Browserid");
-
-                    b.Property<DateTime?>("CreatedOn");
-
-                    b.Property<string>("Email");
-
-                    b.Property<Guid>("Guid");
-
-                    b.Property<bool?>("IsDeleted");
-
-                    b.Property<DateTime?>("LastClaimSubmited");
-
-                    b.Property<DateTime?>("Lastlogin");
-
-                    b.Property<string>("LastloginId");
-
-                    b.Property<string>("Password");
-
-                    b.Property<bool?>("Passwordchange");
-
-                    b.Property<int?>("ProviderId");
-
-                    b.Property<DateTime?>("UpdatedOn");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ProviderId");
-
-                    b.ToTable("ProviderLogin");
-                });
-
-            modelBuilder.Entity("NovoCore.Models.ProviderRating", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime?>("CreatedOn");
-
-                    b.Property<DateTime?>("Dateaccessed");
-
-                    b.Property<string>("Email");
-
-                    b.Property<int?>("Enrolleeid");
-
-                    b.Property<string>("FeedBack");
-
-                    b.Property<string>("Fullname");
-
-                    b.Property<Guid>("Guid");
-
-                    b.Property<bool?>("IsDeleted");
-
-                    b.Property<string>("PhoneNumber");
-
-                    b.Property<int?>("ProviderId");
-
-                    b.Property<int?>("Rating");
-
-                    b.Property<DateTime?>("UpdatedOn");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("Enrolleeid");
-
-                    b.HasIndex("ProviderId")
-                        .IsUnique()
-                        .HasFilter("[ProviderId] IS NOT NULL");
-
-                    b.ToTable("ProviderRating");
-                });
-
-            modelBuilder.Entity("NovoCore.Models.ProviderServices", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("AddedBy");
-
-                    b.Property<DateTime?>("CreatedOn");
-
-                    b.Property<string>("Description");
-
-                    b.Property<Guid>("Guid");
-
-                    b.Property<bool?>("IsDeleted");
-
-                    b.Property<string>("Name");
-
-                    b.Property<string>("OpeningDays");
-
-                    b.Property<int?>("ProviderId");
-
-                    b.Property<DateTime?>("UpdatedOn");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ProviderId");
-
-                    b.ToTable("ProviderServices");
-                });
-
-            modelBuilder.Entity("NovoCore.Models.Staff", b =>
-                {
-                    b.Property<string>("StaffId")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("CompanyId");
-
-                    b.Property<int>("CompanySubsidiary");
-
-                    b.Property<int>("Createdby");
-
-                    b.Property<bool>("HasProfile");
-
-                    b.Property<bool>("IsExpunged");
-
-                    b.Property<int>("NewStaffId");
-
-                    b.Property<int>("Profileid");
-
-                    b.Property<string>("StaffFullname");
-
-                    b.Property<int>("StaffJobId");
-
-                    b.Property<DateTime?>("stafflinkDate");
-
-                    b.Property<int>("stafflinkUSer");
-
-                    b.HasKey("StaffId");
-
-                    b.ToTable("Staff");
-                });
-
-            modelBuilder.Entity("NovoCore.Models.State", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Code");
-
-                    b.Property<DateTime?>("CreatedOn");
-
-                    b.Property<int?>("DelistedProviderPageId");
-
-                    b.Property<int?>("EnrolleeDetailsPageId");
-
-                    b.Property<int?>("EnrolleeListPageId");
-
-                    b.Property<int?>("EnrolleePageId");
-
-                    b.Property<int?>("EnrolleeRegPageId");
-
-                    b.Property<Guid>("Guid");
-
-                    b.Property<bool?>("IsDeleted");
-
-                    b.Property<string>("Name");
-
-                    b.Property<int?>("ProviderPageId");
-
-                    b.Property<int?>("SiteId");
-
-                    b.Property<bool?>("Status");
-
-                    b.Property<DateTime?>("UpdatedOn");
-
-                    b.Property<long?>("Zone");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("State");
-                });
-
-            modelBuilder.Entity("NovoCore.Models.Subsidiary", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("AddedBy");
-
-                    b.Property<int?>("Companyid");
-
-                    b.Property<int?>("CreatedBy");
-
-                    b.Property<DateTime?>("CreatedOn");
-
-                    b.Property<Guid>("Guid");
-
-                    b.Property<bool?>("IsDeleted");
-
-                    b.Property<string>("Subsidaryname");
-
-                    b.Property<string>("Subsidaryprofile");
-
-                    b.Property<DateTime?>("UpdatedOn");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("Companyid")
-                        .IsUnique()
-                        .HasFilter("[Companyid] IS NOT NULL");
-
-                    b.ToTable("CompanySubsidiary");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -1615,199 +1421,60 @@ namespace NovoCore.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("NovoCore.Models.AuthorizationRequest", b =>
+            modelBuilder.Entity("NovoClasses.Models.Claim", b =>
                 {
-                    b.HasOne("NovoCore.Models.Company", "EnrolleeCompany")
-                        .WithMany()
-                        .HasForeignKey("EnrolleeCompanyId");
-
-                    b.HasOne("NovoCore.Models.Enrollee", "Enrollee")
-                        .WithMany()
-                        .HasForeignKey("EnrolleeId");
-
-                    b.HasOne("NovoCore.Models.Provider", "Provider")
-                        .WithMany()
-                        .HasForeignKey("ProviderId");
+                    b.HasOne("NovoClasses.Models.ClaimBatch", "ClaimBatch")
+                        .WithMany("Claims")
+                        .HasForeignKey("ClaimBatchId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("NovoCore.Models.Benefit", b =>
+            modelBuilder.Entity("NovoClasses.Models.ClaimBatch", b =>
                 {
-                    b.HasOne("NovoCore.Models.BenefitsCategory", "BenefitsCategory")
-                        .WithMany()
-                        .HasForeignKey("BenefitsCategoryId");
+                    b.HasOne("NovoClasses.Models.PaymentBatch", "PaymentBatch")
+                        .WithMany("ClaimBatches")
+                        .HasForeignKey("paymentbatchId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("NovoCore.Models.Claim", b =>
+            modelBuilder.Entity("NovoClasses.Models.ClaimDrug", b =>
                 {
-                    b.HasOne("NovoCore.Models.ClaimBatch", "ClaimBatch")
-                        .WithMany("Claim")
-                        .HasForeignKey("ClaimBatchId");
-
-                    b.HasOne("NovoCore.Models.Enrollee", "Enrollee")
-                        .WithMany()
-                        .HasForeignKey("Enrolleeid");
-
-                    b.HasOne("NovoCore.Models.Provider", "Provider")
-                        .WithMany()
-                        .HasForeignKey("ProviderId");
+                    b.HasOne("NovoClasses.Models.Claim", "Claim")
+                        .WithMany("ClaimDrugs")
+                        .HasForeignKey("ClaimId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("NovoCore.Models.ClaimBatch", b =>
+            modelBuilder.Entity("NovoClasses.Models.ClaimService", b =>
                 {
-                    b.HasOne("NovoCore.Models.PaymentBatch", "Paymentbatch")
-                        .WithMany("ClaimBatch")
-                        .HasForeignKey("PaymentbatchId");
+                    b.HasOne("NovoClasses.Models.Claim", "Claim")
+                        .WithMany("ClaimServices")
+                        .HasForeignKey("ClaimId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("NovoCore.Models.ClaimDrug", b =>
+            modelBuilder.Entity("NovoClasses.Models.CompanyBranch", b =>
                 {
-                    b.HasOne("NovoCore.Models.Claim", "Claim")
-                        .WithMany("ClaimDrug")
-                        .HasForeignKey("ClaimId");
+                    b.HasOne("NovoClasses.Models.Company", "Company")
+                        .WithMany("CompanyBranches")
+                        .HasForeignKey("companyId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("NovoCore.Models.ClaimService", b =>
+            modelBuilder.Entity("NovoClasses.Models.IncomingClaim", b =>
                 {
-                    b.HasOne("NovoCore.Models.Claim", "Claim")
-                        .WithMany("ClaimService")
-                        .HasForeignKey("ClaimId");
-                });
-
-            modelBuilder.Entity("NovoCore.Models.Company", b =>
-                {
-                    b.HasOne("NovoCore.Models.State", "State")
-                        .WithMany()
-                        .HasForeignKey("StateId");
-                });
-
-            modelBuilder.Entity("NovoCore.Models.CompanyBranch", b =>
-                {
-                    b.HasOne("NovoCore.Models.Company", "Company")
-                        .WithMany("CompanyBranch")
-                        .HasForeignKey("Companyid");
-                });
-
-            modelBuilder.Entity("NovoCore.Models.Enrollee", b =>
-                {
-                    b.HasOne("NovoCore.Models.Company", "Company")
-                        .WithMany()
-                        .HasForeignKey("CompanyId");
-
-                    b.HasOne("NovoCore.Models.Lga", "Lga")
-                        .WithMany()
-                        .HasForeignKey("Lgaid");
-
-                    b.HasOne("NovoCore.Models.Staff", "Staff")
-                        .WithMany()
-                        .HasForeignKey("StaffId1");
-
-                    b.HasOne("NovoCore.Models.State", "State")
-                        .WithMany()
-                        .HasForeignKey("Stateid");
-                });
-
-            modelBuilder.Entity("NovoCore.Models.EnrolleePassport", b =>
-                {
-                    b.HasOne("NovoCore.Models.Enrollee", "Enrollee")
-                        .WithOne("EnrolleePassport")
-                        .HasForeignKey("NovoCore.Models.EnrolleePassport", "Enrolleeid");
-                });
-
-            modelBuilder.Entity("NovoCore.Models.IncomingClaims", b =>
-                {
-                    b.HasOne("NovoCore.Models.ClaimBatch", "ClaimBatch")
+                    b.HasOne("NovoClasses.Models.ClaimBatch", "ClaimBatch")
                         .WithMany("IncomingClaims")
-                        .HasForeignKey("ClaimBatchId");
-
-                    b.HasOne("NovoCore.Models.Provider", "Provider")
-                        .WithMany()
-                        .HasForeignKey("Providerid");
-
-                    b.HasOne("NovoCore.Models.ApplicationUser", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId");
-                });
-
-            modelBuilder.Entity("NovoCore.Models.NovoAuthorizationCode", b =>
-                {
-                    b.HasOne("NovoCore.Models.ApplicationUser", "ApplicationUser")
-                        .WithMany()
-                        .HasForeignKey("ApplicationUserId");
-
-                    b.HasOne("NovoCore.Models.Enrollee", "Enrollee")
-                        .WithMany()
-                        .HasForeignKey("EnrolleeId");
-
-                    b.HasOne("NovoCore.Models.Provider", "Provider")
-                        .WithMany()
-                        .HasForeignKey("ProviderId");
-                });
-
-            modelBuilder.Entity("NovoCore.Models.Provider", b =>
-                {
-                    b.HasOne("NovoCore.Models.Lga", "Lga")
-                        .WithMany()
-                        .HasForeignKey("LgaId");
-
-                    b.HasOne("NovoCore.Models.State", "State")
-                        .WithMany()
-                        .HasForeignKey("StateId");
-                });
-
-            modelBuilder.Entity("NovoCore.Models.ProviderAccount", b =>
-                {
-                    b.HasOne("NovoCore.Models.Bank", "Bank")
-                        .WithMany()
-                        .HasForeignKey("BankId")
+                        .HasForeignKey("ClaimBatchId")
                         .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("NovoCore.Models.Provider", "Provider")
-                        .WithMany()
-                        .HasForeignKey("Providerid");
                 });
 
-            modelBuilder.Entity("NovoCore.Models.ProviderAssignee", b =>
+            modelBuilder.Entity("NovoClasses.Models.ProviderService", b =>
                 {
-                    b.HasOne("NovoCore.Models.Provider", "Provider")
-                        .WithOne("ProviderAssignee")
-                        .HasForeignKey("NovoCore.Models.ProviderAssignee", "Providerid")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("NovoCore.Models.ApplicationUser", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId");
-                });
-
-            modelBuilder.Entity("NovoCore.Models.ProviderLogin", b =>
-                {
-                    b.HasOne("NovoCore.Models.Provider", "Provider")
-                        .WithMany()
-                        .HasForeignKey("ProviderId");
-                });
-
-            modelBuilder.Entity("NovoCore.Models.ProviderRating", b =>
-                {
-                    b.HasOne("NovoCore.Models.Enrollee", "Enrollee")
-                        .WithMany()
-                        .HasForeignKey("Enrolleeid");
-
-                    b.HasOne("NovoCore.Models.Provider", "Provider")
-                        .WithOne("ProviderRating")
-                        .HasForeignKey("NovoCore.Models.ProviderRating", "ProviderId");
-                });
-
-            modelBuilder.Entity("NovoCore.Models.ProviderServices", b =>
-                {
-                    b.HasOne("NovoCore.Models.Provider", "Provider")
+                    b.HasOne("NovoClasses.Models.Provider", "Provider")
                         .WithMany("ProviderServices")
-                        .HasForeignKey("ProviderId");
-                });
-
-            modelBuilder.Entity("NovoCore.Models.Subsidiary", b =>
-                {
-                    b.HasOne("NovoCore.Models.Company", "Company")
-                        .WithOne("Subsidiary")
-                        .HasForeignKey("NovoCore.Models.Subsidiary", "Companyid");
+                        .HasForeignKey("providerId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }

@@ -4616,12 +4616,23 @@
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
       },
+      "NovoClasses/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
+        "compile": {
+          "bin/placeholder/NovoClasses.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/NovoClasses.dll": {}
+        }
+      },
       "NovoCore/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
         "dependencies": {
           "Microsoft.NETCore.App": "2.1.0",
-          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.1.9"
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.1.9",
+          "NovoClasses": "1.0.0"
         },
         "compile": {
           "bin/placeholder/NovoCore.dll": {}
@@ -12536,6 +12547,11 @@
         "system.xml.xpath.xdocument.nuspec"
       ]
     },
+    "NovoClasses/1.0.0": {
+      "type": "project",
+      "path": "../NovoClasses/NovoClasses.csproj",
+      "msbuildProject": "../NovoClasses/NovoClasses.csproj"
+    },
     "NovoCore/1.0.0": {
       "type": "project",
       "path": "../NovoCore/NovoCore.csproj",
@@ -12547,6 +12563,8 @@
       "Microsoft.AspNetCore.App >= 2.1.1",
       "Microsoft.AspNetCore.Razor.Design >= 2.1.2",
       "Microsoft.NETCore.App >= 2.1.0",
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.1.9",
+      "NovoClasses >= 1.0.0",
       "NovoCore >= 1.0.0"
     ]
   },
@@ -12557,11 +12575,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\freempire\\source\\repos\\NovoCore\\ProviderModule\\ProviderModule.csproj",
+      "projectUniqueName": "C:\\Users\\freempire\\source\\repos\\NovoCoreLit\\ProviderModule\\ProviderModule.csproj",
       "projectName": "ProviderModule",
-      "projectPath": "C:\\Users\\freempire\\source\\repos\\NovoCore\\ProviderModule\\ProviderModule.csproj",
+      "projectPath": "C:\\Users\\freempire\\source\\repos\\NovoCoreLit\\ProviderModule\\ProviderModule.csproj",
       "packagesPath": "C:\\Users\\freempire\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\freempire\\source\\repos\\NovoCore\\ProviderModule\\obj\\",
+      "outputPath": "C:\\Users\\freempire\\source\\repos\\NovoCoreLit\\ProviderModule\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -12580,8 +12598,11 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\freempire\\source\\repos\\NovoCore\\NovoCore\\NovoCore.csproj": {
-              "projectPath": "C:\\Users\\freempire\\source\\repos\\NovoCore\\NovoCore\\NovoCore.csproj"
+            "C:\\Users\\freempire\\source\\repos\\NovoCoreLit\\NovoClasses\\NovoClasses.csproj": {
+              "projectPath": "C:\\Users\\freempire\\source\\repos\\NovoCoreLit\\NovoClasses\\NovoClasses.csproj"
+            },
+            "C:\\Users\\freempire\\source\\repos\\NovoCoreLit\\NovoCore\\NovoCore.csproj": {
+              "projectPath": "C:\\Users\\freempire\\source\\repos\\NovoCoreLit\\NovoCore\\NovoCore.csproj"
             }
           }
         }
@@ -12610,6 +12631,10 @@
             "target": "Package",
             "version": "[2.1.0, )",
             "autoReferenced": true
+          },
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+            "target": "Package",
+            "version": "[2.1.9, )"
           }
         },
         "imports": [

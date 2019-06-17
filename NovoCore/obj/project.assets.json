@@ -4615,6 +4615,16 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
+      },
+      "NovoClasses/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
+        "compile": {
+          "bin/placeholder/NovoClasses.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/NovoClasses.dll": {}
+        }
       }
     }
   },
@@ -12521,6 +12531,11 @@
         "system.xml.xpath.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xpath.xdocument.nuspec"
       ]
+    },
+    "NovoClasses/1.0.0": {
+      "type": "project",
+      "path": "../NovoClasses/NovoClasses.csproj",
+      "msbuildProject": "../NovoClasses/NovoClasses.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -12528,7 +12543,8 @@
       "Microsoft.AspNetCore.App >= 2.1.1",
       "Microsoft.AspNetCore.Razor.Design >= 2.1.2",
       "Microsoft.NETCore.App >= 2.1.0",
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.1.9"
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.1.9",
+      "NovoClasses >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -12538,11 +12554,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\freempire\\source\\repos\\NovoCore\\NovoCore\\NovoCore.csproj",
+      "projectUniqueName": "C:\\Users\\freempire\\source\\repos\\NovoCoreLit\\NovoCore\\NovoCore.csproj",
       "projectName": "NovoCore",
-      "projectPath": "C:\\Users\\freempire\\source\\repos\\NovoCore\\NovoCore\\NovoCore.csproj",
+      "projectPath": "C:\\Users\\freempire\\source\\repos\\NovoCoreLit\\NovoCore\\NovoCore.csproj",
       "packagesPath": "C:\\Users\\freempire\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\freempire\\source\\repos\\NovoCore\\NovoCore\\obj\\",
+      "outputPath": "C:\\Users\\freempire\\source\\repos\\NovoCoreLit\\NovoCore\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -12560,7 +12576,11 @@
       },
       "frameworks": {
         "netcoreapp2.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\freempire\\source\\repos\\NovoCoreLit\\NovoClasses\\NovoClasses.csproj": {
+              "projectPath": "C:\\Users\\freempire\\source\\repos\\NovoCoreLit\\NovoClasses\\NovoClasses.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

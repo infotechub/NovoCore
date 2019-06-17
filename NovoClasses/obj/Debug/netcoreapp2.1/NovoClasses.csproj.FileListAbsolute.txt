@@ -1,0 +1,17 @@
+C:\Users\freempire\source\repos\NovoCore2\NovoClasses\bin\Debug\netcoreapp2.1\NovoClasses.deps.json
+C:\Users\freempire\source\repos\NovoCore2\NovoClasses\bin\Debug\netcoreapp2.1\NovoClasses.dll
+C:\Users\freempire\source\repos\NovoCore2\NovoClasses\bin\Debug\netcoreapp2.1\NovoClasses.pdb
+C:\Users\freempire\source\repos\NovoCore2\NovoClasses\obj\Debug\netcoreapp2.1\NovoClasses.csproj.CoreCompileInputs.cache
+C:\Users\freempire\source\repos\NovoCore2\NovoClasses\obj\Debug\netcoreapp2.1\NovoClasses.AssemblyInfoInputs.cache
+C:\Users\freempire\source\repos\NovoCore2\NovoClasses\obj\Debug\netcoreapp2.1\NovoClasses.AssemblyInfo.cs
+C:\Users\freempire\source\repos\NovoCore2\NovoClasses\obj\Debug\netcoreapp2.1\NovoClasses.dll
+C:\Users\freempire\source\repos\NovoCore2\NovoClasses\obj\Debug\netcoreapp2.1\NovoClasses.pdb
+C:\Users\freempire\source\repos\NovoCoreLit\NovoClasses\bin\Debug\netcoreapp2.1\NovoClasses.deps.json
+C:\Users\freempire\source\repos\NovoCoreLit\NovoClasses\bin\Debug\netcoreapp2.1\NovoClasses.dll
+C:\Users\freempire\source\repos\NovoCoreLit\NovoClasses\bin\Debug\netcoreapp2.1\NovoClasses.pdb
+C:\Users\freempire\source\repos\NovoCoreLit\NovoClasses\obj\Debug\netcoreapp2.1\NovoClasses.csproj.CoreCompileInputs.cache
+C:\Users\freempire\source\repos\NovoCoreLit\NovoClasses\obj\Debug\netcoreapp2.1\NovoClasses.AssemblyInfoInputs.cache
+C:\Users\freempire\source\repos\NovoCoreLit\NovoClasses\obj\Debug\netcoreapp2.1\NovoClasses.AssemblyInfo.cs
+C:\Users\freempire\source\repos\NovoCoreLit\NovoClasses\obj\Debug\netcoreapp2.1\NovoClasses.dll
+C:\Users\freempire\source\repos\NovoCoreLit\NovoClasses\obj\Debug\netcoreapp2.1\NovoClasses.pdb
+C:\Users\freempire\source\repos\NovoCoreLit\NovoClasses\obj\Debug\netcoreapp2.1\NovoClasses.csprojAssemblyReference.cache

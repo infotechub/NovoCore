@@ -1,8 +1,47 @@
-﻿@model NovoCore.ViewModel.ProviderViewModel
+﻿
+@model IEnumerable<NovoClasses.Models.Provider>
+
 @{
     ViewData["Title"] = "Index";
 }
 
-<h2>@Model.</h2>
+
+
+@if (!Model.Any())
+{
+    <p>We don't have any customer yet.</p>
+}
+else
+{
+    <p><button style="background-color: cadetblue"><a href="Customers/New">Add Customer</a></button></p>
+    <table id="example" class="table table-bordered table-hover display nowrap">
+
+        <thead><tr><th>Name</th></tr></thead>
+        <tbody>
+            @foreach (var provider in Model)
+            {
+                <tr>
+
+                    <td>@provider.Name</td>
+                    <td><button data-customer-id="@provider.Id" class="btn-link js-delete">Delete</button></td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+    @ViewBag.Subittedcount
+   
+   
+}
+
+
+
+
+
+
+
+
+
+
 
 
