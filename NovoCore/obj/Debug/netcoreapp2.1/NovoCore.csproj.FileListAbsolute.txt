@@ -283,3 +283,6 @@ C:\Users\freempire\source\repos\NovoCoreLit\NovoCore\obj\Debug\netcoreapp2.1\Nov
 C:\Users\freempire\source\repos\NovoCoreLit\NovoCore\obj\Debug\netcoreapp2.1\NovoCore.csproj.CopyComplete
 C:\Users\freempire\source\repos\NovoCoreLit\NovoCore\obj\Debug\netcoreapp2.1\NovoCore.dll
 C:\Users\freempire\source\repos\NovoCoreLit\NovoCore\obj\Debug\netcoreapp2.1\NovoCore.pdb
+C:\Users\freempire\source\repos\NovoCore\NovoCore\bin\Debug\netcoreapp2.1\NovoClasses.dll
+C:\Users\freempire\source\repos\NovoCore\NovoCore\bin\Debug\netcoreapp2.1\NovoClasses.pdb
+C:\Users\freempire\source\repos\NovoCore\NovoCore\obj\Debug\netcoreapp2.1\Razor\Views\Dashboard\Index.g.cshtml.cs

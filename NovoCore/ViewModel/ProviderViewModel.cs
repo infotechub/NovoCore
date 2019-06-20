@@ -19,7 +19,7 @@ namespace NovoCore.ViewModel
         public IEnumerable<Lga> Lga { get; set; }
         public IEnumerable<State> State { get; set; }
         public IEnumerable<ApplicationUser> ApplicationUsers { get; set; }
-        public IEnumerable<Enrollee> Enrollee { get; set; }
+        public IList<Enrollee> Enrollee { get; set; }
         public IEnumerable<ClaimBatch> claimBatches { get; set; }
         public IEnumerable<Claim> Claims { get; set; }
         public IEnumerable<ClaimDrug> ClaimDrugs { get; set; }

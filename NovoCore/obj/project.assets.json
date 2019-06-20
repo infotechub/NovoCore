@@ -12554,11 +12554,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\freempire\\source\\repos\\NovoCoreLit\\NovoCore\\NovoCore.csproj",
+      "projectUniqueName": "C:\\Users\\freempire\\source\\repos\\NovoCore\\NovoCore\\NovoCore.csproj",
       "projectName": "NovoCore",
-      "projectPath": "C:\\Users\\freempire\\source\\repos\\NovoCoreLit\\NovoCore\\NovoCore.csproj",
+      "projectPath": "C:\\Users\\freempire\\source\\repos\\NovoCore\\NovoCore\\NovoCore.csproj",
       "packagesPath": "C:\\Users\\freempire\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\freempire\\source\\repos\\NovoCoreLit\\NovoCore\\obj\\",
+      "outputPath": "C:\\Users\\freempire\\source\\repos\\NovoCore\\NovoCore\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -12577,8 +12577,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\freempire\\source\\repos\\NovoCoreLit\\NovoClasses\\NovoClasses.csproj": {
-              "projectPath": "C:\\Users\\freempire\\source\\repos\\NovoCoreLit\\NovoClasses\\NovoClasses.csproj"
+            "C:\\Users\\freempire\\source\\repos\\NovoCore\\NovoClasses\\NovoClasses.csproj": {
+              "projectPath": "C:\\Users\\freempire\\source\\repos\\NovoCore\\NovoClasses\\NovoClasses.csproj"
             }
           }
         }

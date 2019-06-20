@@ -1,5 +1,5 @@
 ﻿
-@model IEnumerable<NovoClasses.Models.Provider>
+@model NovoCore.ViewModel.Dashboard
 
 @{
     ViewData["Title"] = "Index";
@@ -7,32 +7,20 @@
 
 
 
-@if (!Model.Any())
-{
-    <p>We don't have any customer yet.</p>
-}
-else
-{
-    <p><button style="background-color: cadetblue"><a href="Customers/New">Add Customer</a></button></p>
-    <table id="example" class="table table-bordered table-hover display nowrap">
+@Model.Provider.Name<br />
+@Model.Enrollee.Surname  @Model.Enrollee.Othernames<br />
+@Model.Enrollee.EnrolleePassportId<br />
+@Model.Enrollee.Policynumber<br />
+@Model.Enrollee.Sex<br />
+@Model.Staff.CompanyId<br />
+@Model.Staff.StaffFullname<br />
+@Model.Company.Name<br />
+Verification Code: @ViewBag.randomLessThan100
 
-        <thead><tr><th>Name</th></tr></thead>
-        <tbody>
-            @foreach (var provider in Model)
-            {
-                <tr>
+@ViewBag.submittedcount
 
-                    <td>@provider.Name</td>
-                    <td><button data-customer-id="@provider.Id" class="btn-link js-delete">Delete</button></td>
-                </tr>
-            }
-        </tbody>
 
-    </table>
-    @ViewBag.Subittedcount
-   
-   
-}
+<p style="color:red">@ViewBag.FacilitiesAllowed</p>
 
 
 

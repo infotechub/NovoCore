@@ -109,19 +109,150 @@ namespace NovoCore.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("NovoClasses.Models.AdminAllowedRole", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<bool?>("IsRecursive");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.Property<int?>("UserRoleId");
+
+                    b.Property<int?>("WebpageId");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("AdminAllowedRole");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.AdminDisallowedRole", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<bool?>("IsRecursive");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.Property<int?>("UserRoleId");
+
+                    b.Property<int?>("WebpageId");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("AdminDisallowedRole");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.AuthorizationCode", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool?>("AcknowledgedByAuthorizer");
+
+                    b.Property<DateTime?>("AdmissionDate");
+
+                    b.Property<int?>("Authorizedby");
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<int?>("DaysApprovded");
+
+                    b.Property<string>("Diagnosis");
+
+                    b.Property<DateTime?>("DischargeDate");
+
+                    b.Property<string>("EnrolleeCompany");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<bool?>("IsNHIS");
+
+                    b.Property<bool?>("Isadmission");
+
+                    b.Property<string>("Note");
+
+                    b.Property<string>("Plan");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<string>("TypeofAuthorization");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.Property<string>("admissionStatus")
+                        .HasMaxLength(255);
+
+                    b.Property<string>("authorizationCode1")
+                        .HasColumnName("authorizationCode");
+
+                    b.Property<bool?>("deliverysmssent");
+
+                    b.Property<int?>("enrolleeAge");
+
+                    b.Property<int?>("enrolleeID");
+
+                    b.Property<string>("enrolleeName");
+
+                    b.Property<int?>("generatedby");
+
+                    b.Property<bool?>("isdelivery");
+
+                    b.Property<string>("policyNumber");
+
+                    b.Property<int?>("provider");
+
+                    b.Property<string>("requestername");
+
+                    b.Property<string>("requesterphone");
+
+                    b.Property<string>("status");
+
+                    b.Property<string>("treatmentAuthorized");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("AuthorizationCode");
+                });
+
             modelBuilder.Entity("NovoClasses.Models.AuthorizationRequest", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("CreatedOn");
+                    b.Property<DateTime?>("CreatedOn");
 
                     b.Property<Guid>("Guid");
 
-                    b.Property<bool>("IsDeleted");
+                    b.Property<bool?>("IsDeleted");
 
-                    b.Property<DateTime>("UpdatedOn");
+                    b.Property<int?>("SiteId");
+
+                    b.Property<DateTime?>("UpdatedOn");
 
                     b.Property<string>("company");
 
@@ -129,13 +260,13 @@ namespace NovoCore.Data.Migrations
 
                     b.Property<string>("fullname");
 
-                    b.Property<bool>("isnew");
+                    b.Property<bool?>("isnew");
 
                     b.Property<string>("policynumber");
 
                     b.Property<string>("providerName");
 
-                    b.Property<int>("providerid");
+                    b.Property<int?>("providerid");
 
                     b.Property<string>("reasonforcode");
 
@@ -144,25 +275,183 @@ namespace NovoCore.Data.Migrations
                     b.ToTable("AuthorizationRequest");
                 });
 
+            modelBuilder.Entity("NovoClasses.Models.AutomaticExpungeStaff", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("Companyid");
+
+                    b.Property<int?>("CreatedBy");
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<bool?>("Showtouser");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<int?>("StaffId");
+
+                    b.Property<int?>("Subsidiary");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("AutomaticExpungeStaff");
+                });
+
             modelBuilder.Entity("NovoClasses.Models.Bank", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("CreatedOn");
+                    b.Property<DateTime?>("CreatedOn");
 
                     b.Property<Guid>("Guid");
 
-                    b.Property<bool>("IsDeleted");
+                    b.Property<bool?>("IsDeleted");
 
                     b.Property<string>("Name");
 
-                    b.Property<DateTime>("UpdatedOn");
+                    b.Property<int?>("SiteId");
+
+                    b.Property<DateTime?>("UpdatedOn");
 
                     b.HasKey("Id");
 
                     b.ToTable("Bank");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.Batch", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Batch");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.BatchJob", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("BatchId");
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<string>("Data");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<string>("IndexName");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<string>("Status")
+                        .HasMaxLength(255);
+
+                    b.Property<int?>("Tries");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.Property<string>("UrlSegment");
+
+                    b.Property<string>("discriminator")
+                        .IsRequired()
+                        .HasMaxLength(255);
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BatchId");
+
+                    b.ToTable("BatchJob");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.BatchRun", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("BatchId");
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<string>("Status")
+                        .HasMaxLength(255);
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BatchId");
+
+                    b.ToTable("BatchRun");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.BatchRunResult", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("BatchJobId");
+
+                    b.Property<int?>("BatchRunId");
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<int?>("ExecutionOrder");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<decimal?>("MillisecondsTaken");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<string>("Status")
+                        .HasMaxLength(255);
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BatchJobId");
+
+                    b.HasIndex("BatchRunId");
+
+                    b.ToTable("BatchRunResult");
                 });
 
             modelBuilder.Entity("NovoClasses.Models.Benefit", b =>
@@ -171,25 +460,27 @@ namespace NovoCore.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("Benefitcategory");
+                    b.Property<int?>("Benefitcategory");
 
                     b.Property<string>("Benefitlimit");
 
                     b.Property<string>("CategoryName");
 
-                    b.Property<DateTime>("CreatedOn");
+                    b.Property<DateTime?>("CreatedOn");
 
                     b.Property<string>("Description");
 
                     b.Property<Guid>("Guid");
 
-                    b.Property<bool>("IsDeleted");
+                    b.Property<bool?>("IsDeleted");
 
                     b.Property<string>("Name");
 
-                    b.Property<bool>("Status");
+                    b.Property<int?>("SiteId");
 
-                    b.Property<DateTime>("UpdatedOn");
+                    b.Property<bool?>("Status");
+
+                    b.Property<DateTime?>("UpdatedOn");
 
                     b.HasKey("Id");
 
@@ -204,21 +495,23 @@ namespace NovoCore.Data.Migrations
 
                     b.Property<string>("Code");
 
-                    b.Property<DateTime>("CreatedOn");
+                    b.Property<DateTime?>("CreatedOn");
 
                     b.Property<string>("Description");
 
                     b.Property<Guid>("Guid");
 
-                    b.Property<bool>("IsDeleted");
+                    b.Property<bool?>("IsDeleted");
 
                     b.Property<string>("Name");
 
                     b.Property<string>("Servicetype");
 
-                    b.Property<bool>("Status");
+                    b.Property<int?>("SiteId");
 
-                    b.Property<DateTime>("UpdatedOn");
+                    b.Property<bool?>("Status");
+
+                    b.Property<DateTime?>("UpdatedOn");
 
                     b.HasKey("Id");
 
@@ -231,31 +524,31 @@ namespace NovoCore.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<bool>("Admission");
+                    b.Property<bool?>("Admission");
 
-                    b.Property<DateTime>("AdmissionDate");
+                    b.Property<DateTime?>("AdmissionDate");
 
-                    b.Property<bool>("AllprescibedDrugs");
+                    b.Property<bool?>("AllprescibedDrugs");
 
                     b.Property<string>("AreaOfSpecialty");
 
                     b.Property<string>("AreaOfSpecialtyforspecialist");
 
-                    b.Property<int>("ClaimBatchId");
+                    b.Property<int?>("ClaimBatchId");
 
                     b.Property<string>("ClaimsSerialNo");
 
                     b.Property<string>("ClientsideID");
 
-                    b.Property<DateTime>("CreatedOn");
+                    b.Property<DateTime?>("CreatedOn");
 
                     b.Property<string>("Diagnosis");
 
-                    b.Property<DateTime>("DischargeDate");
+                    b.Property<DateTime?>("DischargeDate");
 
-                    b.Property<DateTime>("DoctorSignecDate");
+                    b.Property<DateTime?>("DoctorSignecDate");
 
-                    b.Property<bool>("DoctorSigned");
+                    b.Property<bool?>("DoctorSigned");
 
                     b.Property<string>("DoctorsId");
 
@@ -267,51 +560,52 @@ namespace NovoCore.Data.Migrations
 
                     b.Property<string>("EnrolleePlan");
 
-                    b.Property<DateTime>("EnrolleeSignDate");
+                    b.Property<DateTime?>("EnrolleeSignDate");
 
-                    b.Property<int>("Enrolleeid");
+                    b.Property<int?>("Enrolleeid");
 
-                    b.Property<bool>("Feeding");
+                    b.Property<bool?>("Feeding");
 
                     b.Property<Guid>("Guid");
 
-                    b.Property<bool>("IsDeleted");
+                    b.Property<bool?>("IsDeleted");
 
-                    b.Property<bool>("LaboratoryInvestigation");
-
-                    b.Property<int>("MyUserId");
+                    b.Property<bool?>("LaboratoryInvestigation");
 
                     b.Property<string>("Note");
 
-                    b.Property<int>("ProviderId");
+                    b.Property<int?>("ProviderId");
 
-                    b.Property<DateTime>("ReVettedDate");
+                    b.Property<DateTime?>("ReVettedDate");
 
-                    b.Property<int>("RevettedBy");
+                    b.Property<int?>("RevettedBy");
 
-                    b.Property<DateTime>("ServiceDate");
+                    b.Property<DateTime?>("ServiceDate");
 
                     b.Property<string>("Signature");
 
-                    b.Property<bool>("SubmitByProvider");
+                    b.Property<int?>("SiteId");
 
-                    b.Property<string>("Tag");
+                    b.Property<bool?>("SubmitByProvider");
+
+                    b.Property<string>("Tag")
+                        .HasMaxLength(255);
 
                     b.Property<string>("TreatmentCode");
 
                     b.Property<string>("TreatmentGiven");
 
-                    b.Property<DateTime>("UpdatedOn");
+                    b.Property<DateTime?>("UpdatedOn");
 
-                    b.Property<DateTime>("VettedDate");
+                    b.Property<DateTime?>("VettedDate");
 
-                    b.Property<int>("capturedBy");
+                    b.Property<int?>("capturedBy");
 
                     b.Property<string>("capturedName");
 
                     b.Property<string>("diagnosticsIDString");
 
-                    b.Property<int>("enrolleeCompanyId");
+                    b.Property<int?>("enrolleeCompanyId");
 
                     b.Property<string>("enrolleeCompanyName");
 
@@ -321,7 +615,7 @@ namespace NovoCore.Data.Migrations
 
                     b.Property<string>("enrolleePolicyNumber");
 
-                    b.Property<bool>("enrolleeSigned");
+                    b.Property<bool?>("enrolleeSigned");
 
                     b.Property<string>("enrolleeage");
 
@@ -331,17 +625,16 @@ namespace NovoCore.Data.Migrations
 
                     b.Property<string>("specialistName");
 
-                    b.Property<DateTime>("specialistSignecDate");
+                    b.Property<DateTime?>("specialistSignecDate");
 
-                    b.Property<bool>("specialistSigned");
+                    b.Property<bool?>("specialistSigned");
 
                     b.Property<string>("specialistphonenumber");
 
-                    b.Property<string>("status");
+                    b.Property<string>("status")
+                        .HasMaxLength(255);
 
-                    b.Property<int>("vettedBy");
-
-                    b.Property<string>("vettedName");
+                    b.Property<int?>("vettedBy");
 
                     b.HasKey("Id");
 
@@ -350,25 +643,78 @@ namespace NovoCore.Data.Migrations
                     b.ToTable("Claim");
                 });
 
+            modelBuilder.Entity("NovoClasses.Models.ClaimAnalysisOffline", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<decimal?>("AMOUNTPROCESSED");
+
+                    b.Property<decimal?>("AMOUNTSUBMITTED");
+
+                    b.Property<string>("CLASS");
+
+                    b.Property<string>("CLIENTNAME");
+
+                    b.Property<string>("COMPANY");
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<DateTime?>("DATERECEIVED");
+
+                    b.Property<string>("DIAGNOSIS");
+
+                    b.Property<DateTime?>("ENCOUNTERDATE");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<string>("HEALTHPLAN");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<string>("LOCATION");
+
+                    b.Property<string>("POLICYNUMBER");
+
+                    b.Property<string>("PROVIDER");
+
+                    b.Property<int?>("PROVIDERID");
+
+                    b.Property<int?>("SerialNo");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<string>("TREATMENT");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ClaimAnalysisOffline");
+                });
+
             modelBuilder.Entity("NovoClasses.Models.ClaimBatch", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<decimal>("AmountPaid");
+                    b.Property<decimal?>("AmountPaid");
 
                     b.Property<string>("AuthorizationNote");
 
-                    b.Property<string>("AuthorizationStatus");
+                    b.Property<string>("AuthorizationStatus")
+                        .HasMaxLength(255);
 
-                    b.Property<int>("AuthorizedBy");
+                    b.Property<int?>("AuthorizedBy");
 
-                    b.Property<DateTime>("AuthorizedDate");
+                    b.Property<DateTime?>("AuthorizedDate");
 
-                    b.Property<string>("Batch");
+                    b.Property<string>("Batch")
+                        .HasMaxLength(255);
 
-                    b.Property<DateTime>("CreatedOn");
+                    b.Property<DateTime?>("CreatedOn");
 
                     b.Property<string>("DeletionNote");
 
@@ -376,49 +722,52 @@ namespace NovoCore.Data.Migrations
 
                     b.Property<string>("DestBankName");
 
-                    b.Property<DateTime>("DisapprovalDate");
+                    b.Property<DateTime?>("DisapprovalDate");
 
                     b.Property<string>("DisapprovalNote");
 
-                    b.Property<int>("DisapprovedBy");
+                    b.Property<int?>("DisapprovedBy");
 
                     b.Property<Guid>("Guid");
 
-                    b.Property<bool>("IsDeleted");
+                    b.Property<bool?>("IsDeleted");
 
-                    b.Property<int>("ProviderId");
+                    b.Property<int?>("ProviderId");
 
                     b.Property<string>("ProviderName");
 
-                    b.Property<DateTime>("SubmitedForPaymentDate");
+                    b.Property<int?>("SiteId");
 
-                    b.Property<DateTime>("SubmitedForReviewDate");
+                    b.Property<DateTime?>("SubmitedForPaymentDate");
 
-                    b.Property<DateTime>("UpdatedOn");
+                    b.Property<DateTime?>("SubmitedForReviewDate");
 
-                    b.Property<DateTime>("VetDate");
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.Property<DateTime?>("VetDate");
 
                     b.Property<string>("chequeno");
 
-                    b.Property<int>("claimscountfromclient");
+                    b.Property<int?>("claimscountfromclient");
 
-                    b.Property<DateTime>("datepaymentadvicesent");
+                    b.Property<DateTime?>("datepaymentadvicesent");
 
-                    b.Property<bool>("isremote");
+                    b.Property<bool?>("isremote");
 
-                    b.Property<int>("markpaidby");
+                    b.Property<int?>("markpaidby");
 
-                    b.Property<int>("month");
+                    b.Property<int?>("month");
 
                     b.Property<string>("paidby");
 
-                    b.Property<bool>("paymentadvicesent");
+                    b.Property<bool?>("paymentadvicesent");
 
-                    b.Property<int>("paymentbatchId");
+                    b.Property<int?>("paymentbatchId");
 
-                    b.Property<DateTime>("paymentdate");
+                    b.Property<DateTime?>("paymentdate");
 
-                    b.Property<string>("paymentmethod");
+                    b.Property<string>("paymentmethod")
+                        .HasMaxLength(255);
 
                     b.Property<string>("paymentmethodstring");
 
@@ -426,23 +775,24 @@ namespace NovoCore.Data.Migrations
 
                     b.Property<string>("remark");
 
-                    b.Property<DateTime>("reviewDate");
+                    b.Property<DateTime?>("reviewDate");
 
-                    b.Property<int>("reviewedBy");
+                    b.Property<int?>("reviewedBy");
 
                     b.Property<string>("sourceBankAccountNo");
 
                     b.Property<string>("sourceBankName");
 
-                    b.Property<string>("status");
+                    b.Property<string>("status")
+                        .HasMaxLength(255);
 
-                    b.Property<int>("submitedPaymentbyUser");
+                    b.Property<int?>("submitedPaymentbyUser");
 
-                    b.Property<int>("submitedReviewbyUser");
+                    b.Property<int?>("submitedReviewbyUser");
 
-                    b.Property<int>("submitedVetbyUser");
+                    b.Property<int?>("submitedVetbyUser");
 
-                    b.Property<int>("year");
+                    b.Property<int?>("year");
 
                     b.HasKey("Id");
 
@@ -457,37 +807,40 @@ namespace NovoCore.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("ClaimId");
+                    b.Property<int?>("ClaimId");
 
-                    b.Property<DateTime>("CreatedOn");
+                    b.Property<DateTime?>("CreatedOn");
 
                     b.Property<string>("DrugDescription");
 
-                    b.Property<int>("DrugId");
+                    b.Property<int?>("DrugId");
 
                     b.Property<string>("DrugName");
 
                     b.Property<Guid>("Guid");
 
-                    b.Property<decimal>("InitialAmount");
+                    b.Property<decimal?>("InitialAmount");
 
-                    b.Property<bool>("IsDeleted");
+                    b.Property<bool?>("IsDeleted");
 
                     b.Property<string>("Quantity");
 
-                    b.Property<DateTime>("UpdatedOn");
+                    b.Property<int?>("SiteId");
 
-                    b.Property<decimal>("VettedAmount");
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.Property<decimal?>("VettedAmount");
 
                     b.Property<string>("VettingComment");
 
-                    b.Property<decimal>("costofdrug");
+                    b.Property<decimal?>("costofdrug");
 
-                    b.Property<bool>("flagred");
+                    b.Property<bool?>("flagred");
 
                     b.Property<string>("rate");
 
-                    b.Property<string>("status");
+                    b.Property<string>("status")
+                        .HasMaxLength(255);
 
                     b.HasKey("Id");
 
@@ -496,43 +849,97 @@ namespace NovoCore.Data.Migrations
                     b.ToTable("ClaimDrug");
                 });
 
+            modelBuilder.Entity("NovoClasses.Models.ClaimHistory", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<decimal?>("AMOUNTPROCESSED");
+
+                    b.Property<decimal?>("AMOUNTSUBMITTED");
+
+                    b.Property<string>("CLASS");
+
+                    b.Property<string>("CLIENTNAME");
+
+                    b.Property<string>("COMPANY");
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<DateTime?>("DATERECEIVED");
+
+                    b.Property<string>("DIAGNOSIS");
+
+                    b.Property<DateTime?>("ENCOUNTERDATE");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<string>("HEALTHPLAN");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<string>("LOCATION");
+
+                    b.Property<string>("POLICYNUMBER");
+
+                    b.Property<string>("PROVIDER");
+
+                    b.Property<int?>("PROVIDERID");
+
+                    b.Property<int?>("SerialNo");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<string>("TREATMENT");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ClaimHistory");
+                });
+
             modelBuilder.Entity("NovoClasses.Models.ClaimService", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("ClaimId");
+                    b.Property<int?>("ClaimId");
 
-                    b.Property<DateTime>("CreatedOn");
+                    b.Property<DateTime?>("CreatedOn");
 
                     b.Property<string>("Duration");
 
                     b.Property<Guid>("Guid");
 
-                    b.Property<decimal>("InitialAmount");
+                    b.Property<decimal?>("InitialAmount");
 
-                    b.Property<bool>("IsDeleted");
+                    b.Property<bool?>("IsDeleted");
 
                     b.Property<string>("ServiceDescription");
 
-                    b.Property<int>("ServiceId");
+                    b.Property<int?>("ServiceId");
 
                     b.Property<string>("ServiceName");
 
-                    b.Property<DateTime>("UpdatedOn");
+                    b.Property<int?>("SiteId");
 
-                    b.Property<decimal>("VettedAmount");
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.Property<decimal?>("VettedAmount");
 
                     b.Property<string>("VettingComment");
 
-                    b.Property<decimal>("costofdrug");
+                    b.Property<decimal?>("costofdrug");
 
-                    b.Property<bool>("flagred");
+                    b.Property<bool?>("flagred");
 
                     b.Property<string>("rate");
 
-                    b.Property<string>("status");
+                    b.Property<string>("status")
+                        .HasMaxLength(255);
 
                     b.HasKey("Id");
 
@@ -551,73 +958,131 @@ namespace NovoCore.Data.Migrations
 
                     b.Property<string>("AuthorizationNote");
 
-                    b.Property<int>("AuthorizationStatus");
+                    b.Property<int?>("AuthorizationStatus");
 
-                    b.Property<int>("AuthorizedBy");
+                    b.Property<int?>("AuthorizedBy");
 
-                    b.Property<DateTime>("AuthorizedDate");
+                    b.Property<DateTime?>("AuthorizedDate");
 
                     b.Property<string>("City");
 
                     b.Property<string>("Code");
 
-                    b.Property<int>("CompanyListPageId");
+                    b.Property<int?>("CompanyListPageId");
 
                     b.Property<string>("CreatedBy");
 
-                    b.Property<DateTime>("CreatedOn");
+                    b.Property<DateTime?>("CreatedOn");
 
                     b.Property<string>("DeletionNote");
 
                     b.Property<string>("Description");
 
-                    b.Property<DateTime>("DisapprovalDate");
+                    b.Property<DateTime?>("DisapprovalDate");
 
                     b.Property<string>("DisapprovalNote");
 
-                    b.Property<int>("DisapprovedBy");
+                    b.Property<int?>("DisapprovedBy");
 
                     b.Property<string>("Email");
 
                     b.Property<Guid>("Guid");
 
-                    b.Property<bool>("IsDeleted");
+                    b.Property<bool?>("IsDeleted");
 
                     b.Property<string>("LogoLink");
 
-                    b.Property<int>("Logoid");
+                    b.Property<int?>("Logoid");
 
                     b.Property<string>("Name");
 
-                    b.Property<long>("Parentid");
+                    b.Property<long?>("Parentid");
 
                     b.Property<string>("PhoneNumber");
 
                     b.Property<string>("Plans");
 
-                    b.Property<int>("RegAgeLimit");
+                    b.Property<int?>("RegAgeLimit");
 
-                    b.Property<long>("Stateid");
+                    b.Property<int?>("SiteId");
 
-                    b.Property<bool>("Status");
+                    b.Property<long?>("Stateid");
 
-                    b.Property<int>("SubscriptionStatus");
+                    b.Property<bool?>("Status");
 
-                    b.Property<int>("SubsidiaryId");
+                    b.Property<int?>("SubscriptionStatus");
 
-                    b.Property<DateTime>("UpdatedOn");
+                    b.Property<int?>("SubsidiaryId");
 
-                    b.Property<bool>("WeboperationMode");
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.Property<bool?>("WeboperationMode");
 
                     b.Property<string>("Website");
 
-                    b.Property<bool>("isRenewal");
+                    b.Property<bool?>("isRenewal");
 
                     b.Property<string>("regCode");
 
                     b.HasKey("Id");
 
                     b.ToTable("Company");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.CompanyAssignee", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("Companyid");
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<bool?>("Status");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.Property<int?>("Userid");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CompanyAssignee");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.CompanyBenefit", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("BenefitId");
+
+                    b.Property<string>("BenefitLimit");
+
+                    b.Property<int?>("CompanyPlanid");
+
+                    b.Property<int?>("Companyid");
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CompanyBenefit");
                 });
 
             modelBuilder.Entity("NovoClasses.Models.CompanyBranch", b =>
@@ -628,17 +1093,19 @@ namespace NovoCore.Data.Migrations
 
                     b.Property<string>("Branch");
 
-                    b.Property<DateTime>("CreatedOn");
+                    b.Property<DateTime?>("CreatedOn");
 
                     b.Property<Guid>("Guid");
 
-                    b.Property<bool>("IsDeleted");
+                    b.Property<bool?>("IsDeleted");
 
-                    b.Property<int>("Statecode");
+                    b.Property<int?>("SiteId");
 
-                    b.Property<DateTime>("UpdatedOn");
+                    b.Property<int?>("Statecode");
 
-                    b.Property<int>("companyId");
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.Property<int?>("companyId");
 
                     b.HasKey("Id");
 
@@ -647,31 +1114,642 @@ namespace NovoCore.Data.Migrations
                     b.ToTable("CompanyBranch");
                 });
 
+            modelBuilder.Entity("NovoClasses.Models.CompanyPlan", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool?>("AllowChildEnrollee");
+
+                    b.Property<decimal?>("AnnualPremium");
+
+                    b.Property<string>("AuthorizationNote");
+
+                    b.Property<int?>("AuthorizationStatus");
+
+                    b.Property<int?>("AuthorizedBy");
+
+                    b.Property<DateTime?>("AuthorizedDate");
+
+                    b.Property<int?>("Companyid");
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<int?>("Createdby");
+
+                    b.Property<string>("Description");
+
+                    b.Property<DateTime?>("DisapprovalDate");
+
+                    b.Property<string>("DisapprovalNote");
+
+                    b.Property<int?>("DisapprovedBy");
+
+                    b.Property<decimal?>("Discountlump");
+
+                    b.Property<decimal?>("Discountperenrollee");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<int?>("MaxNoOfDependant");
+
+                    b.Property<string>("Planfriendlyname");
+
+                    b.Property<int?>("Planid");
+
+                    b.Property<string>("ProviderConsession");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<bool?>("Status");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CompanyPlan");
+                });
+
             modelBuilder.Entity("NovoClasses.Models.CompanySubsidiary", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("CreatedBy");
+                    b.Property<int?>("CreatedBy");
 
-                    b.Property<DateTime>("CreatedOn");
+                    b.Property<DateTime?>("CreatedOn");
 
                     b.Property<Guid>("Guid");
 
-                    b.Property<bool>("IsDeleted");
+                    b.Property<bool?>("IsDeleted");
 
-                    b.Property<int>("ParentcompanyId");
+                    b.Property<int?>("ParentcompanyId");
+
+                    b.Property<int?>("SiteId");
 
                     b.Property<string>("Subsidaryname");
 
                     b.Property<string>("Subsidaryprofile");
 
-                    b.Property<DateTime>("UpdatedOn");
+                    b.Property<DateTime?>("UpdatedOn");
 
                     b.HasKey("Id");
 
                     b.ToTable("CompanySubsidiary");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.ConnectCareBeneficiary", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("Administeredby");
+
+                    b.Property<DateTime?>("AdministrationDate");
+
+                    b.Property<string>("BeneficiaryCat");
+
+                    b.Property<string>("BeneficiaryID");
+
+                    b.Property<string>("Category");
+
+                    b.Property<int?>("ConnectCareSponsorId");
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<string>("GuardianEmail");
+
+                    b.Property<string>("GuardianPhonenumber");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<string>("LGA");
+
+                    b.Property<byte[]>("Passport");
+
+                    b.Property<string>("PolicyNumber");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<string>("Status")
+                        .HasMaxLength(255);
+
+                    b.Property<string>("SuggestedProvider");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.Property<bool?>("VerificationStatus");
+
+                    b.Property<bool?>("active");
+
+                    b.Property<bool?>("addon");
+
+                    b.Property<string>("address");
+
+                    b.Property<int?>("age");
+
+                    b.Property<string>("city");
+
+                    b.Property<string>("country");
+
+                    b.Property<DateTime?>("dob");
+
+                    b.Property<string>("email");
+
+                    b.Property<string>("firstname");
+
+                    b.Property<string>("fullname");
+
+                    b.Property<string>("gender");
+
+                    b.Property<string>("lastname");
+
+                    b.Property<string>("phonenumber");
+
+                    b.Property<string>("relationship");
+
+                    b.Property<int?>("sponsorid");
+
+                    b.Property<string>("sponsoridstring");
+
+                    b.Property<string>("state");
+
+                    b.Property<string>("suggestedPlan");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ConnectCareSponsorId");
+
+                    b.ToTable("ConnectCareBeneficiary");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.ConnectcarePaymentDetail", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.Property<bool?>("addon");
+
+                    b.Property<decimal?>("amountpaid");
+
+                    b.Property<string>("beneficiaryID");
+
+                    b.Property<DateTime?>("paymentDate");
+
+                    b.Property<string>("paymentid");
+
+                    b.Property<string>("planpurchased");
+
+                    b.Property<string>("policyid");
+
+                    b.Property<int?>("sponsorID");
+
+                    b.Property<string>("sponsorIDString");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ConnectcarePaymentDetails");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.ConnectCareSponsor", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool?>("Addon");
+
+                    b.Property<int?>("Administeredby");
+
+                    b.Property<DateTime?>("AdministrationDate");
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<int?>("EnrolleeprofileId");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<int?>("ManageSponsorPageId");
+
+                    b.Property<DateTime?>("PolicyEndDate");
+
+                    b.Property<DateTime?>("PolicyStartDate");
+
+                    b.Property<int?>("PolicynotificationConfig");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<DateTime?>("SponsorStartDate");
+
+                    b.Property<string>("SubscriptionType");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.Property<bool?>("active");
+
+                    b.Property<string>("address");
+
+                    b.Property<string>("country");
+
+                    b.Property<string>("email");
+
+                    b.Property<bool?>("emailsent");
+
+                    b.Property<string>("firstname");
+
+                    b.Property<string>("fullname");
+
+                    b.Property<string>("gender");
+
+                    b.Property<int?>("instalment");
+
+                    b.Property<string>("lastname");
+
+                    b.Property<string>("occupation");
+
+                    b.Property<string>("phonenumber");
+
+                    b.Property<string>("policynumber");
+
+                    b.Property<string>("policynumner");
+
+                    b.Property<DateTime?>("pushedDate");
+
+                    b.Property<bool?>("pushedtoMatontine");
+
+                    b.Property<string>("secondarysponsor");
+
+                    b.Property<string>("sponsorID");
+
+                    b.Property<string>("sponsorSTRID");
+
+                    b.Property<string>("state");
+
+                    b.Property<string>("zipcode");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ConnectCareSponsor");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.Country", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Code");
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<string>("Name");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<bool?>("Status");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Country");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.DeletedEnrollee", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("Age");
+
+                    b.Property<int?>("Companyid");
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<int?>("Createdby");
+
+                    b.Property<DateTime?>("Dateexpunged");
+
+                    b.Property<DateTime?>("Datereceived");
+
+                    b.Property<DateTime?>("Dob");
+
+                    b.Property<string>("Emailaddress");
+
+                    b.Property<int?>("EnrolleePassportId");
+
+                    b.Property<string>("ExpungeNote");
+
+                    b.Property<int?>("Expungedby");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("HasRefPolicyNumber");
+
+                    b.Property<bool?>("Hasactivesubscription");
+
+                    b.Property<bool?>("Hasdependents");
+
+                    b.Property<bool?>("IdCardPrinted");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<bool?>("Isexpundged");
+
+                    b.Property<int?>("Lgaid");
+
+                    b.Property<int?>("Maritalstatus");
+
+                    b.Property<string>("Mobilenumber");
+
+                    b.Property<string>("Mobilenumber2");
+
+                    b.Property<string>("Occupation");
+
+                    b.Property<string>("Othernames");
+
+                    b.Property<int?>("Parentid");
+
+                    b.Property<int?>("Parentrelationship");
+
+                    b.Property<string>("Policynumber");
+
+                    b.Property<string>("Preexistingmedicalhistory");
+
+                    b.Property<int?>("Primaryprovider");
+
+                    b.Property<string>("RefPolicynumber");
+
+                    b.Property<string>("Residentialaddress");
+
+                    b.Property<int?>("Sex");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<string>("Specialidcardfield1");
+
+                    b.Property<string>("Specialidcardfield2");
+
+                    b.Property<string>("Specialidcardfield3");
+
+                    b.Property<int?>("Sponsorshiptype");
+
+                    b.Property<string>("Sponsorshiptypenote");
+
+                    b.Property<string>("Sponsorshiptypeothername");
+
+                    b.Property<int?>("Staffprofileid");
+
+                    b.Property<int?>("Stateid");
+
+                    b.Property<int?>("Status");
+
+                    b.Property<int?>("Subscriptionplanid");
+
+                    b.Property<string>("Surname");
+
+                    b.Property<string>("Title");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("DeletedEnrollee");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.DownloadFile", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<int?>("DownloadFilesPageId");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.Property<int?>("createdby");
+
+                    b.Property<int?>("downloadCount");
+
+                    b.Property<int?>("downloadedBy");
+
+                    b.Property<string>("fileName");
+
+                    b.Property<string>("filelink");
+
+                    b.Property<int?>("filestaus");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("DownloadFile");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.DrugTariff", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("AlternatePrice");
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<string>("Description");
+
+                    b.Property<int?>("GroupId");
+
+                    b.Property<string>("Groupname");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<string>("Name");
+
+                    b.Property<bool?>("PreauthorizationRequired");
+
+                    b.Property<decimal?>("Price");
+
+                    b.Property<string>("Remark");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<string>("Strenght");
+
+                    b.Property<string>("Unit");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("DrugTariff");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.EmailDEST", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.Property<string>("code");
+
+                    b.Property<string>("desc");
+
+                    b.Property<string>("emailaddress");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("EmailDEST");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.Enrollee", b =>
+                {
+                    b.Property<Guid>("Guid")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int?>("Age");
+
+                    b.Property<int?>("Bulkjobid");
+
+                    b.Property<int?>("Companyid");
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<int?>("Createdby");
+
+                    b.Property<DateTime?>("Dateexpunged");
+
+                    b.Property<DateTime?>("Datereceived");
+
+                    b.Property<DateTime?>("Dob");
+
+                    b.Property<string>("Emailaddress");
+
+                    b.Property<int?>("EnrolleePassportId");
+
+                    b.Property<string>("ExpungeNote");
+
+                    b.Property<int?>("Expungedby");
+
+                    b.Property<bool?>("HasRefPolicyNumber");
+
+                    b.Property<bool?>("Hasactivesubscription");
+
+                    b.Property<bool?>("Hasdependents");
+
+                    b.Property<int>("Id");
+
+                    b.Property<bool?>("IdCardPrinted");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<bool?>("Isexpundged");
+
+                    b.Property<int?>("LastyearBirthdaymsgsent");
+
+                    b.Property<int?>("Lgaid");
+
+                    b.Property<int?>("Maritalstatus");
+
+                    b.Property<string>("Mobilenumber");
+
+                    b.Property<string>("Mobilenumber2");
+
+                    b.Property<string>("Occupation");
+
+                    b.Property<string>("Othernames");
+
+                    b.Property<int?>("Parentid");
+
+                    b.Property<int?>("Parentrelationship");
+
+                    b.Property<string>("Policynumber")
+                        .HasMaxLength(450);
+
+                    b.Property<string>("Preexistingmedicalhistory");
+
+                    b.Property<int?>("Primaryprovider");
+
+                    b.Property<string>("RefPolicynumber");
+
+                    b.Property<string>("Residentialaddress");
+
+                    b.Property<int?>("Sex");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<string>("Specialidcardfield1");
+
+                    b.Property<string>("Specialidcardfield2");
+
+                    b.Property<string>("Specialidcardfield3");
+
+                    b.Property<int?>("Sponsorshiptype");
+
+                    b.Property<string>("Sponsorshiptypenote");
+
+                    b.Property<string>("Sponsorshiptypeothername");
+
+                    b.Property<int?>("Staffprofileid");
+
+                    b.Property<int?>("Stateid");
+
+                    b.Property<int?>("Status");
+
+                    b.Property<int?>("Subscriptionplanid");
+
+                    b.Property<string>("Surname");
+
+                    b.Property<string>("Title");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.HasKey("Guid");
+
+                    b.ToTable("Enrollee");
                 });
 
             modelBuilder.Entity("NovoClasses.Models.EnrolleePassport", b =>
@@ -680,9 +1758,9 @@ namespace NovoCore.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("CreatedOn");
+                    b.Property<DateTime?>("CreatedOn");
 
-                    b.Property<int>("Enrolleeid");
+                    b.Property<int?>("Enrolleeid");
 
                     b.Property<string>("Enrolleepolicyno");
 
@@ -690,13 +1768,369 @@ namespace NovoCore.Data.Migrations
 
                     b.Property<byte[]>("Imgraw");
 
-                    b.Property<bool>("IsDeleted");
+                    b.Property<bool?>("IsDeleted");
 
-                    b.Property<DateTime>("UpdatedOn");
+                    b.Property<int?>("SiteId");
+
+                    b.Property<DateTime?>("UpdatedOn");
 
                     b.HasKey("Id");
 
                     b.ToTable("EnrolleePassport");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.EnrolleePreexistingMedicalHistory", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Answerstring");
+
+                    b.Property<bool?>("Answeryesno");
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<int?>("Enrolleeid");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<int?>("Pemhid");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<bool?>("Status");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("EnrolleePreexistingMedicalHistory");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.EnrolleeVerificationCode", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("AgentNote");
+
+                    b.Property<bool?>("AttendedTo");
+
+                    b.Property<int?>("AuthChannel");
+
+                    b.Property<string>("AuthorizationCode");
+
+                    b.Property<bool?>("AuthorizationCodeGiven");
+
+                    b.Property<int?>("AuthorizedByUserId");
+
+                    b.Property<int?>("Channel");
+
+                    b.Property<int?>("CreatedBy");
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<DateTime?>("DateAttendedTo");
+
+                    b.Property<DateTime?>("DateAuthenticated");
+
+                    b.Property<DateTime?>("DateAuthorized");
+
+                    b.Property<DateTime?>("DateExpired");
+
+                    b.Property<DateTime?>("EncounterDate");
+
+                    b.Property<int?>("EnrolleeId");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<string>("Note");
+
+                    b.Property<int?>("PickedUpById");
+
+                    b.Property<bool?>("Pickedup");
+
+                    b.Property<bool?>("PostSMSSent");
+
+                    b.Property<int?>("ProviderId");
+
+                    b.Property<string>("RequestPhoneNumber");
+
+                    b.Property<string>("ServiceAccessed");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<string>("Status")
+                        .HasMaxLength(255);
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.Property<string>("VerificationCode");
+
+                    b.Property<int?>("VisitPurpose");
+
+                    b.Property<string>("visittype")
+                        .HasMaxLength(255);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("EnrolleeVerificationCode");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.ExpungedEnrollee", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<DateTime?>("Dateexpunged");
+
+                    b.Property<int?>("Enrolleeid");
+
+                    b.Property<string>("Enrolleepolicyno");
+
+                    b.Property<string>("ExpungeNote");
+
+                    b.Property<int?>("Expungedby");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ExpungedEnrollee");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.FacilitiesAllowed", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("AddedBy");
+
+                    b.Property<string>("Address");
+
+                    b.Property<string>("CompanyId");
+
+                    b.Property<string>("CompanyName");
+
+                    b.Property<string>("CompanyPlanId");
+
+                    b.Property<DateTime?>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DeletedBy");
+
+                    b.Property<DateTime?>("DeletedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("FacilitiesAllowedPageId");
+
+                    b.Property<Guid?>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<string>("Name");
+
+                    b.Property<string>("Planid");
+
+                    b.Property<string>("ProviderId");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<string>("Status");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("FacilitiesAllowed");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.Faq", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Answer");
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<string>("Question");
+
+                    b.Property<int?>("ShowFaqsId");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Faq");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.FormListOption", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<int?>("FormPropertyId");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<bool?>("Selected");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.Property<string>("Value");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("FormPropertyId");
+
+                    b.ToTable("FormListOption");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.FormPosting", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.Property<int?>("WebpageId");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("FormPosting");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.FormProperty", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<string>("CssClass");
+
+                    b.Property<int?>("DisplayOrder");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<string>("HtmlId");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<string>("LabelText");
+
+                    b.Property<string>("Name");
+
+                    b.Property<string>("PlaceHolder");
+
+                    b.Property<string>("PropertyType")
+                        .IsRequired()
+                        .HasMaxLength(255);
+
+                    b.Property<bool?>("Required");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.Property<int?>("WebpageId");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("FormProperty");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.FormValue", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<int?>("FormPostingId");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<bool?>("IsFile");
+
+                    b.Property<string>("Key");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.Property<string>("Value");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("FormPostingId");
+
+                    b.ToTable("FormValue");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.Gender", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<string>("Name");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Gender");
                 });
 
             modelBuilder.Entity("NovoClasses.Models.IncomingClaim", b =>
@@ -707,57 +2141,101 @@ namespace NovoCore.Data.Migrations
 
                     b.Property<string>("CapturerList");
 
-                    b.Property<int>("ClaimBatchId");
+                    b.Property<int?>("ClaimBatchId");
 
-                    b.Property<DateTime>("CreatedOn");
+                    b.Property<DateTime?>("CreatedOn");
 
-                    b.Property<DateTime>("DateReceived");
+                    b.Property<DateTime?>("DateReceived");
 
                     b.Property<Guid>("Guid");
 
-                    b.Property<bool>("IsDeleted");
+                    b.Property<bool?>("IsDeleted");
 
-                    b.Property<bool>("IsRemoteSubmission");
+                    b.Property<bool?>("IsRemoteSubmission");
 
                     b.Property<string>("Note");
 
-                    b.Property<DateTime>("UpdatedOn");
+                    b.Property<int?>("SiteId");
+
+                    b.Property<DateTime?>("UpdatedOn");
 
                     b.Property<string>("caption");
 
-                    b.Property<DateTime>("captureStarted");
+                    b.Property<DateTime?>("captureStarted");
 
-                    b.Property<DateTime>("dateTransferAcknowledged");
+                    b.Property<DateTime?>("dateTransferAcknowledged");
 
                     b.Property<string>("deliveredby");
 
-                    b.Property<DateTime>("fullDateofbill");
+                    b.Property<DateTime?>("fullDateofbill");
 
-                    b.Property<int>("month");
+                    b.Property<int?>("month");
 
                     b.Property<string>("month_string");
 
-                    b.Property<int>("noofencounter");
+                    b.Property<int?>("noofencounter");
 
-                    b.Property<int>("providerid");
+                    b.Property<int?>("providerid");
 
-                    b.Property<int>("receivedBy");
+                    b.Property<int?>("receivedBy");
 
-                    b.Property<string>("status");
+                    b.Property<string>("status")
+                        .HasMaxLength(255);
 
-                    b.Property<decimal>("totalamount");
+                    b.Property<decimal?>("totalamount");
 
-                    b.Property<int>("transferedTo");
+                    b.Property<int?>("transferedTo");
 
-                    b.Property<int>("transferstatus");
+                    b.Property<int?>("transferstatus");
 
-                    b.Property<int>("year");
+                    b.Property<int?>("year");
 
                     b.HasKey("Id");
 
                     b.HasIndex("ClaimBatchId");
 
                     b.ToTable("IncomingClaims");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.Issue", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<string>("Details");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.Property<string>("companies");
+
+                    b.Property<bool?>("escalated");
+
+                    b.Property<string>("prority")
+                        .HasMaxLength(255);
+
+                    b.Property<string>("providers");
+
+                    b.Property<string>("report");
+
+                    b.Property<string>("status")
+                        .HasMaxLength(255);
+
+                    b.Property<string>("subject");
+
+                    b.Property<string>("users");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Issues");
                 });
 
             modelBuilder.Entity("NovoClasses.Models.Lga", b =>
@@ -768,104 +2246,473 @@ namespace NovoCore.Data.Migrations
 
                     b.Property<string>("Code");
 
-                    b.Property<DateTime>("CreatedOn");
+                    b.Property<DateTime?>("CreatedOn");
 
-                    b.Property<int>("DelistedProviderPageId");
+                    b.Property<int?>("DelistedProviderPageId");
 
-                    b.Property<int>("EnrolleeDetailsPageId");
+                    b.Property<int?>("EnrolleeDetailsPageId");
 
-                    b.Property<int>("EnrolleeListPageId");
+                    b.Property<int?>("EnrolleeListPageId");
 
-                    b.Property<int>("EnrolleePageId");
+                    b.Property<int?>("EnrolleePageId");
 
-                    b.Property<int>("EnrolleeRegPageId");
+                    b.Property<int?>("EnrolleeRegPageId");
 
                     b.Property<Guid>("Guid");
 
-                    b.Property<bool>("IsDeleted");
+                    b.Property<bool?>("IsDeleted");
 
                     b.Property<string>("Name");
 
-                    b.Property<int>("ProviderPageId");
+                    b.Property<int?>("ProviderPageId");
 
-                    b.Property<long>("State");
+                    b.Property<int?>("SiteId");
 
-                    b.Property<bool>("Status");
+                    b.Property<long?>("State");
 
-                    b.Property<DateTime>("UpdatedOn");
+                    b.Property<bool?>("Status");
+
+                    b.Property<DateTime?>("UpdatedOn");
 
                     b.HasKey("Id");
 
                     b.ToTable("Lga");
                 });
 
-            modelBuilder.Entity("NovoClasses.Models.NovoAuthorizationCode", b =>
+            modelBuilder.Entity("NovoClasses.Models.Log", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<bool>("AcknowledgedByAuthorizer");
+                    b.Property<DateTime?>("CreatedOn");
 
-                    b.Property<DateTime>("AdmissionDate");
+                    b.Property<string>("Detail");
 
-                    b.Property<int>("Authorizedby");
-
-                    b.Property<DateTime>("CreatedOn");
-
-                    b.Property<int>("DaysApprovded");
-
-                    b.Property<string>("Diagnosis");
-
-                    b.Property<DateTime>("DischargeDate");
-
-                    b.Property<string>("EnrolleeCompany");
+                    b.Property<byte[]>("Error");
 
                     b.Property<Guid>("Guid");
 
-                    b.Property<bool>("IsDeleted");
+                    b.Property<bool?>("IsDeleted");
 
-                    b.Property<bool>("IsNHIS");
+                    b.Property<string>("Message");
 
-                    b.Property<bool>("Isadmission");
+                    b.Property<int?>("SiteId");
 
-                    b.Property<string>("Note");
+                    b.Property<string>("Type")
+                        .HasMaxLength(255);
 
-                    b.Property<string>("Plan");
-
-                    b.Property<string>("TypeofAuthorization");
-
-                    b.Property<DateTime>("UpdatedOn");
-
-                    b.Property<string>("admissionStatus");
-
-                    b.Property<string>("authorizationCode");
-
-                    b.Property<bool>("deliverysmssent");
-
-                    b.Property<int>("enrolleeAge");
-
-                    b.Property<int>("enrolleeID");
-
-                    b.Property<string>("enrolleeName");
-
-                    b.Property<int>("generatedby");
-
-                    b.Property<bool>("isdelivery");
-
-                    b.Property<string>("policyNumber");
-
-                    b.Property<int>("provider");
-
-                    b.Property<string>("requestername");
-
-                    b.Property<string>("requesterphone");
-
-                    b.Property<string>("treatmentAuthorized");
+                    b.Property<DateTime?>("UpdatedOn");
 
                     b.HasKey("Id");
 
-                    b.ToTable("AuthorizationCode");
+                    b.ToTable("Log");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.LuceneFieldBoost", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<float?>("Boost");
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<string>("Definition");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("LuceneFieldBoost");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.MaritalStatu", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<string>("Name");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("MaritalStatus");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.MediaFile", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<long?>("ContentLength");
+
+                    b.Property<string>("ContentType");
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<string>("Description");
+
+                    b.Property<int?>("DisplayOrder");
+
+                    b.Property<string>("FileExtension");
+
+                    b.Property<string>("FileName");
+
+                    b.Property<string>("FileUrl");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<int?>("Height");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<int?>("MediaCategoryId");
+
+                    b.Property<string>("MediaFileType")
+                        .IsRequired()
+                        .HasMaxLength(255);
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<string>("Title")
+                        .HasMaxLength(4000);
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.Property<int?>("Width");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("MediaFile");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.MessageTemplate", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Bcc");
+
+                    b.Property<string>("Body");
+
+                    b.Property<string>("Cc");
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<string>("FromAddress");
+
+                    b.Property<string>("FromName");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("Imported");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<bool?>("IsHtml");
+
+                    b.Property<string>("MessageTemplateType");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<string>("Subject");
+
+                    b.Property<string>("ToAddress");
+
+                    b.Property<string>("ToName");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("MessageTemplate");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.MobileSignup", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("CodeGenerated");
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<string>("Email");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<string>("PhoneNumber");
+
+                    b.Property<string>("PolicyNumber");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<string>("Smsid");
+
+                    b.Property<int?>("Status");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("MobileSignup");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.Notification", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<string>("Message");
+
+                    b.Property<string>("NotificationType")
+                        .HasMaxLength(255);
+
+                    b.Property<int>("ProviderId");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.Property<int>("UserId");
+
+                    b.Property<string>("status");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Notification");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.NotificationTable", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool?>("Active");
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<string>("Description");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<int?>("Notificationcode");
+
+                    b.Property<string>("Roles");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("NotificationTable");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.NovoService", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("AuthorizationNote");
+
+                    b.Property<int?>("AuthorizationStatus");
+
+                    b.Property<int?>("AuthorizedBy");
+
+                    b.Property<DateTime?>("AuthorizedDate");
+
+                    b.Property<string>("Code");
+
+                    b.Property<int?>("CreatedBy");
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<string>("Description");
+
+                    b.Property<DateTime?>("DisapprovalDate");
+
+                    b.Property<string>("DisapprovalNote");
+
+                    b.Property<int?>("DisapprovedBy");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<string>("Name");
+
+                    b.Property<int?>("ServicesPageId");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<bool?>("Status");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Service");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.NovoStaff", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<DateTime?>("DOB");
+
+                    b.Property<string>("Grade");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<string>("Job_Desc");
+
+                    b.Property<int?>("LineManager");
+
+                    b.Property<string>("Role");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<string>("Staff_Email");
+
+                    b.Property<string>("Staff_Name");
+
+                    b.Property<string>("Staff_No");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("NovoStaff");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.NovoStaffResponsibility", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<int?>("Staff_Id");
+
+                    b.Property<string>("Staff_Resp");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("NovoStaffResponsibility");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.OfflineMessage", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<string>("FromId");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<string>("Message");
+
+                    b.Property<string>("MsgDate");
+
+                    b.Property<bool?>("Read");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<string>("ToId");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("OfflineMessage");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.PageTemplate", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<int?>("LayoutId");
+
+                    b.Property<string>("Name");
+
+                    b.Property<string>("PageTemplateName");
+
+                    b.Property<string>("PageType");
+
+                    b.Property<bool?>("SingleUse");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.Property<string>("UrlGeneratorType");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("PageTemplate");
                 });
 
             modelBuilder.Entity("NovoClasses.Models.PaymentBatch", b =>
@@ -874,37 +2721,174 @@ namespace NovoCore.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("CreatedOn");
+                    b.Property<DateTime?>("CreatedOn");
 
                     b.Property<string>("Description");
 
                     b.Property<Guid>("Guid");
 
-                    b.Property<bool>("IsDeleted");
+                    b.Property<bool?>("IsDeleted");
 
                     b.Property<string>("Note");
 
+                    b.Property<int?>("SiteId");
+
                     b.Property<string>("Title");
 
-                    b.Property<DateTime>("UpdatedOn");
+                    b.Property<DateTime?>("UpdatedOn");
 
-                    b.Property<int>("createdBy");
+                    b.Property<int?>("createdBy");
 
-                    b.Property<DateTime>("datepaymentcompleted");
+                    b.Property<DateTime?>("datepaymentcompleted");
 
-                    b.Property<DateTime>("datepaymentstarted");
+                    b.Property<DateTime?>("datepaymentstarted");
 
-                    b.Property<int>("paidby");
+                    b.Property<int?>("paidby");
 
-                    b.Property<string>("status");
+                    b.Property<string>("status")
+                        .HasMaxLength(255);
 
-                    b.Property<int>("terminatedby");
+                    b.Property<int?>("terminatedby");
 
-                    b.Property<DateTime>("terminationdate");
+                    b.Property<DateTime?>("terminationdate");
 
                     b.HasKey("Id");
 
                     b.ToTable("PaymentBatch");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.PendingDependant", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool?>("Approved");
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<byte[]>("ImgRaw");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<string>("Note");
+
+                    b.Property<string>("Principalpolicynum");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.Property<DateTime?>("dob");
+
+                    b.Property<string>("firstName");
+
+                    b.Property<int?>("hospital");
+
+                    b.Property<string>("lastname");
+
+                    b.Property<string>("mobile");
+
+                    b.Property<string>("preexisting");
+
+                    b.Property<string>("principalGuid");
+
+                    b.Property<int?>("relationship");
+
+                    b.Property<int?>("sex");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("PendingDependant");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.Plan", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Code");
+
+                    b.Property<string>("CreatedBy");
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<string>("Description");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<string>("Name");
+
+                    b.Property<int?>("PlanPageId");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<bool?>("Status");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Plan");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.PlanDefaultBenefit", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("BenefitId");
+
+                    b.Property<string>("BenefitLimit");
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<int?>("Planid");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("PlanDefaultBenefit");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.PreExistingMedicalHistoryList", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<string>("Description");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<string>("Name");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<bool?>("Status");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("PreExistingMedicalHistoryList");
                 });
 
             modelBuilder.Entity("NovoClasses.Models.Provider", b =>
@@ -917,17 +2901,18 @@ namespace NovoCore.Data.Migrations
 
                     b.Property<string>("Area");
 
-                    b.Property<int>("Assignee");
+                    b.Property<int?>("Assignee");
 
                     b.Property<string>("AuthorizationNote");
 
-                    b.Property<int>("AuthorizationStatus");
+                    b.Property<int?>("AuthorizationStatus");
 
-                    b.Property<int>("AuthorizedBy");
+                    b.Property<int?>("AuthorizedBy");
 
-                    b.Property<DateTime>("AuthorizedDate");
+                    b.Property<DateTime?>("AuthorizedDate");
 
-                    b.Property<string>("Category");
+                    b.Property<string>("Category")
+                        .HasMaxLength(255);
 
                     b.Property<string>("Code");
 
@@ -935,31 +2920,31 @@ namespace NovoCore.Data.Migrations
 
                     b.Property<string>("CreatedBy");
 
-                    b.Property<DateTime>("CreatedOn");
+                    b.Property<DateTime?>("CreatedOn");
 
                     b.Property<string>("DeletionNote");
 
                     b.Property<string>("DelistNote");
 
-                    b.Property<int>("DelistedProviderPageId");
+                    b.Property<int?>("DelistedProviderPageId");
 
-                    b.Property<DateTime>("DisapprovalDate");
+                    b.Property<DateTime?>("DisapprovalDate");
 
                     b.Property<string>("DisapprovalNote");
 
-                    b.Property<int>("DisapprovedBy");
+                    b.Property<int?>("DisapprovedBy");
 
                     b.Property<string>("Email");
 
                     b.Property<Guid>("Guid");
 
-                    b.Property<bool>("IsDeleted");
+                    b.Property<bool?>("IsDeleted");
 
-                    b.Property<int>("LgaId");
+                    b.Property<int?>("LgaId");
 
                     b.Property<string>("Name");
 
-                    b.Property<long>("Parentid");
+                    b.Property<long?>("Parentid");
 
                     b.Property<string>("PaymentEmail1");
 
@@ -969,15 +2954,15 @@ namespace NovoCore.Data.Migrations
 
                     b.Property<string>("Phone2");
 
-                    b.Property<int>("ProviderApprovalPageId");
+                    b.Property<int?>("ProviderApprovalPageId");
 
-                    b.Property<int>("ProviderListPageId");
+                    b.Property<int?>("ProviderListPageId");
 
                     b.Property<string>("ProviderTariffs");
 
-                    b.Property<int>("Provideraccount2Id");
+                    b.Property<int?>("Provideraccount2Id");
 
-                    b.Property<int>("ProvideraccountId");
+                    b.Property<int?>("ProvideraccountId");
 
                     b.Property<string>("Providergpscordinate");
 
@@ -985,27 +2970,29 @@ namespace NovoCore.Data.Migrations
 
                     b.Property<string>("Providerservices");
 
-                    b.Property<int>("StateId");
+                    b.Property<int?>("SiteId");
 
-                    b.Property<bool>("Status");
+                    b.Property<int?>("StateId");
+
+                    b.Property<bool?>("Status");
 
                     b.Property<string>("SubCode");
 
-                    b.Property<int>("TariffContentPageId");
+                    b.Property<int?>("TariffContentPageId");
 
-                    b.Property<int>("TariffPageId");
+                    b.Property<int?>("TariffPageId");
 
-                    b.Property<DateTime>("UpdatedOn");
+                    b.Property<DateTime?>("UpdatedOn");
 
                     b.Property<string>("Website");
 
-                    b.Property<int>("delistedBy");
+                    b.Property<int?>("delistedBy");
 
-                    b.Property<DateTime>("delisteddate");
+                    b.Property<DateTime?>("delisteddate");
 
-                    b.Property<bool>("isDelisted");
+                    b.Property<bool?>("isDelisted");
 
-                    b.Property<int>("providerloginId");
+                    b.Property<int?>("providerloginId");
 
                     b.HasKey("Id");
 
@@ -1020,13 +3007,13 @@ namespace NovoCore.Data.Migrations
 
                     b.Property<string>("AuthorizationNote");
 
-                    b.Property<int>("AuthorizationStatus");
+                    b.Property<int?>("AuthorizationStatus");
 
-                    b.Property<int>("AuthorizedBy");
+                    b.Property<int?>("AuthorizedBy");
 
-                    b.Property<DateTime>("AuthorizedDate");
+                    b.Property<DateTime?>("AuthorizedDate");
 
-                    b.Property<int>("BankId");
+                    b.Property<int?>("BankId");
 
                     b.Property<string>("Bankaccountname");
 
@@ -1034,25 +3021,27 @@ namespace NovoCore.Data.Migrations
 
                     b.Property<string>("Bankbranch");
 
-                    b.Property<DateTime>("CreatedOn");
+                    b.Property<DateTime?>("CreatedOn");
 
-                    b.Property<DateTime>("DisapprovalDate");
+                    b.Property<DateTime?>("DisapprovalDate");
 
                     b.Property<string>("DisapprovalNote");
 
-                    b.Property<int>("DisapprovedBy");
+                    b.Property<int?>("DisapprovedBy");
 
                     b.Property<Guid>("Guid");
 
-                    b.Property<bool>("IsDeleted");
+                    b.Property<bool?>("IsDeleted");
 
                     b.Property<string>("Note");
 
-                    b.Property<int>("Providerid");
+                    b.Property<int?>("Providerid");
 
-                    b.Property<bool>("Status");
+                    b.Property<int?>("SiteId");
 
-                    b.Property<DateTime>("UpdatedOn");
+                    b.Property<bool?>("Status");
+
+                    b.Property<DateTime?>("UpdatedOn");
 
                     b.HasKey("Id");
 
@@ -1065,25 +3054,56 @@ namespace NovoCore.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("AssignedBy");
+                    b.Property<int?>("AssignedBy");
 
-                    b.Property<DateTime>("CreatedOn");
+                    b.Property<DateTime?>("CreatedOn");
 
                     b.Property<Guid>("Guid");
 
-                    b.Property<bool>("IsDeleted");
+                    b.Property<bool?>("IsDeleted");
 
-                    b.Property<int>("Providerid");
+                    b.Property<int?>("Providerid");
 
-                    b.Property<bool>("Status");
+                    b.Property<int?>("SiteId");
 
-                    b.Property<DateTime>("UpdatedOn");
+                    b.Property<bool?>("Status");
 
-                    b.Property<int>("Userid");
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.Property<int?>("Userid");
 
                     b.HasKey("Id");
 
                     b.ToTable("ProviderAssignee");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.ProviderClaimBK", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.Property<string>("clientkey");
+
+                    b.Property<string>("data");
+
+                    b.Property<int?>("providerId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("providerId");
+
+                    b.ToTable("ProviderClaimBK");
                 });
 
             modelBuilder.Entity("NovoClasses.Models.ProviderLogin", b =>
@@ -1098,31 +3118,33 @@ namespace NovoCore.Data.Migrations
 
                     b.Property<string>("Altemail3");
 
-                    b.Property<DateTime>("CreatedOn");
+                    b.Property<DateTime?>("CreatedOn");
 
                     b.Property<Guid>("Guid");
 
-                    b.Property<bool>("IsDeleted");
+                    b.Property<bool?>("IsDeleted");
 
-                    b.Property<DateTime>("LastClaimSubmited");
+                    b.Property<DateTime?>("LastClaimSubmited");
 
-                    b.Property<int>("ProviderId");
+                    b.Property<int?>("ProviderId");
 
-                    b.Property<DateTime>("UpdatedOn");
+                    b.Property<int?>("SiteId");
 
-                    b.Property<bool>("active");
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.Property<bool?>("active");
 
                     b.Property<string>("browserid");
 
                     b.Property<string>("email");
 
-                    b.Property<DateTime>("lastlogin");
+                    b.Property<DateTime?>("lastlogin");
 
                     b.Property<string>("lastloginId");
 
                     b.Property<string>("password");
 
-                    b.Property<bool>("passwordchange");
+                    b.Property<bool?>("passwordchange");
 
                     b.HasKey("Id");
 
@@ -1135,7 +3157,7 @@ namespace NovoCore.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("CreatedOn");
+                    b.Property<DateTime?>("CreatedOn");
 
                     b.Property<string>("Email");
 
@@ -1145,19 +3167,21 @@ namespace NovoCore.Data.Migrations
 
                     b.Property<Guid>("Guid");
 
-                    b.Property<bool>("IsDeleted");
+                    b.Property<bool?>("IsDeleted");
 
                     b.Property<string>("PhoneNumber");
 
-                    b.Property<DateTime>("UpdatedOn");
+                    b.Property<int?>("SiteId");
 
-                    b.Property<DateTime>("dateaccessed");
+                    b.Property<DateTime?>("UpdatedOn");
 
-                    b.Property<int>("enrolleeid");
+                    b.Property<DateTime?>("dateaccessed");
 
-                    b.Property<int>("providerID");
+                    b.Property<int?>("enrolleeid");
 
-                    b.Property<int>("rating");
+                    b.Property<int?>("providerID");
+
+                    b.Property<int?>("rating");
 
                     b.HasKey("Id");
 
@@ -1170,27 +3194,828 @@ namespace NovoCore.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("CreatedOn");
+                    b.Property<DateTime?>("CreatedOn");
 
                     b.Property<Guid>("Guid");
 
-                    b.Property<bool>("IsDeleted");
+                    b.Property<bool?>("IsDeleted");
 
                     b.Property<string>("Name");
 
                     b.Property<string>("OpeningDays");
 
-                    b.Property<DateTime>("UpdatedOn");
+                    b.Property<int?>("SiteId");
+
+                    b.Property<DateTime?>("UpdatedOn");
 
                     b.Property<string>("description");
 
-                    b.Property<int>("providerId");
+                    b.Property<int?>("providerId");
 
                     b.HasKey("Id");
 
                     b.HasIndex("providerId");
 
                     b.ToTable("ProviderServices");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.Query", b =>
+                {
+                    b.Property<Guid>("Guid")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int?>("Age");
+
+                    b.Property<string>("BranchID")
+                        .HasColumnType("ntext");
+
+                    b.Property<string>("BranchName")
+                        .HasColumnType("ntext");
+
+                    b.Property<int?>("Companyid");
+
+                    b.Property<DateTime?>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("Createdby");
+
+                    b.Property<DateTime?>("Dateexpunged")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("Datereceived")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("Dob")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Emailaddress")
+                        .HasColumnType("ntext");
+
+                    b.Property<int?>("EnrolleePassportId");
+
+                    b.Property<string>("ExpungeNote")
+                        .HasColumnType("ntext");
+
+                    b.Property<int?>("Expungedby");
+
+                    b.Property<bool?>("HasRefPolicyNumber");
+
+                    b.Property<bool?>("Hasactivesubscription");
+
+                    b.Property<bool?>("Hasdependents");
+
+                    b.Property<int>("Id");
+
+                    b.Property<bool?>("IdCardPrinted");
+
+                    b.Property<byte[]>("Imgraw")
+                        .HasColumnType("image");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<bool?>("Isexpundged");
+
+                    b.Property<string>("Lga")
+                        .HasColumnType("ntext");
+
+                    b.Property<int?>("Maritalstatus");
+
+                    b.Property<string>("Mobilenumber")
+                        .HasColumnType("ntext");
+
+                    b.Property<string>("Mobilenumber2")
+                        .HasColumnType("ntext");
+
+                    b.Property<string>("Occupation")
+                        .HasColumnType("ntext");
+
+                    b.Property<string>("Othernames")
+                        .HasColumnType("ntext");
+
+                    b.Property<string>("Policynumber")
+                        .HasColumnType("ntext");
+
+                    b.Property<string>("Preexistingmedicalhistory")
+                        .HasColumnType("ntext");
+
+                    b.Property<string>("Primaryprovider")
+                        .HasColumnType("ntext");
+
+                    b.Property<string>("RefPolicynumber")
+                        .HasColumnType("ntext");
+
+                    b.Property<string>("Residentialaddress")
+                        .HasColumnType("ntext");
+
+                    b.Property<byte[]>("S_Imgraw")
+                        .HasColumnType("image");
+
+                    b.Property<int?>("S_Sex");
+
+                    b.Property<string>("S_email")
+                        .HasColumnType("ntext");
+
+                    b.Property<string>("S_hospital")
+                        .HasColumnType("ntext");
+
+                    b.Property<string>("S_medicalhistory")
+                        .HasColumnType("ntext");
+
+                    b.Property<string>("S_mobile")
+                        .HasColumnType("ntext");
+
+                    b.Property<int?>("Sex");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<string>("Specialidcardfield1")
+                        .HasColumnType("ntext");
+
+                    b.Property<string>("Specialidcardfield2")
+                        .HasColumnType("ntext");
+
+                    b.Property<string>("Specialidcardfield3")
+                        .HasColumnType("ntext");
+
+                    b.Property<int?>("Sponsorshiptype");
+
+                    b.Property<string>("Sponsorshiptypenote")
+                        .HasColumnType("ntext");
+
+                    b.Property<string>("Sponsorshiptypeothername")
+                        .HasColumnType("ntext");
+
+                    b.Property<int?>("Staffprofileid");
+
+                    b.Property<int?>("Stateoforiginid");
+
+                    b.Property<int?>("Stateofresidence");
+
+                    b.Property<int?>("Status");
+
+                    b.Property<int?>("Subscriptionplanid");
+
+                    b.Property<string>("Surname")
+                        .HasColumnType("ntext");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("ntext");
+
+                    b.Property<DateTime?>("UpdatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool?>("addchild1");
+
+                    b.Property<bool?>("addchild2");
+
+                    b.Property<bool?>("addchild3");
+
+                    b.Property<bool?>("addchild4");
+
+                    b.Property<bool?>("addspouse");
+
+                    b.Property<DateTime?>("child1_Dob")
+                        .HasColumnType("datetime2");
+
+                    b.Property<byte[]>("child1_Imgraw")
+                        .HasColumnType("image");
+
+                    b.Property<string>("child1_Othernames")
+                        .HasColumnType("ntext");
+
+                    b.Property<int?>("child1_Sex");
+
+                    b.Property<string>("child1_Surname")
+                        .HasColumnType("ntext");
+
+                    b.Property<string>("child1_email")
+                        .HasColumnType("ntext");
+
+                    b.Property<string>("child1_hospital")
+                        .HasColumnType("ntext");
+
+                    b.Property<string>("child1_medicalhistory")
+                        .HasColumnType("ntext");
+
+                    b.Property<string>("child1_mobile")
+                        .HasColumnType("ntext");
+
+                    b.Property<DateTime?>("child2_Dob")
+                        .HasColumnType("datetime2");
+
+                    b.Property<byte[]>("child2_Imgraw")
+                        .HasColumnType("image");
+
+                    b.Property<string>("child2_Othernames")
+                        .HasColumnType("ntext");
+
+                    b.Property<int?>("child2_Sex");
+
+                    b.Property<string>("child2_Surname")
+                        .HasColumnType("ntext");
+
+                    b.Property<string>("child2_email")
+                        .HasColumnType("ntext");
+
+                    b.Property<string>("child2_hospital")
+                        .HasColumnType("ntext");
+
+                    b.Property<string>("child2_medicalhistory")
+                        .HasColumnType("ntext");
+
+                    b.Property<string>("child2_mobile")
+                        .HasColumnType("ntext");
+
+                    b.Property<DateTime?>("child3_Dob")
+                        .HasColumnType("datetime2");
+
+                    b.Property<byte[]>("child3_Imgraw")
+                        .HasColumnType("image");
+
+                    b.Property<string>("child3_Othernames")
+                        .HasColumnType("ntext");
+
+                    b.Property<int?>("child3_Sex");
+
+                    b.Property<string>("child3_Surname")
+                        .HasColumnType("ntext");
+
+                    b.Property<string>("child3_email")
+                        .HasColumnType("ntext");
+
+                    b.Property<string>("child3_hospital")
+                        .HasColumnType("ntext");
+
+                    b.Property<string>("child3_medicalhistory")
+                        .HasColumnType("ntext");
+
+                    b.Property<string>("child3_mobile")
+                        .HasColumnType("ntext");
+
+                    b.Property<DateTime?>("child4_Dob")
+                        .HasColumnType("datetime2");
+
+                    b.Property<byte[]>("child4_Imgraw")
+                        .HasColumnType("image");
+
+                    b.Property<string>("child4_Othernames")
+                        .HasColumnType("ntext");
+
+                    b.Property<int?>("child4_Sex");
+
+                    b.Property<string>("child4_Surname")
+                        .HasColumnType("ntext");
+
+                    b.Property<string>("child4_email")
+                        .HasColumnType("ntext");
+
+                    b.Property<string>("child4_hospital")
+                        .HasColumnType("ntext");
+
+                    b.Property<string>("child4_medicalhistory")
+                        .HasColumnType("ntext");
+
+                    b.Property<string>("child4_mobile")
+                        .HasColumnType("ntext");
+
+                    b.Property<int?>("officestate");
+
+                    b.Property<DateTime?>("s_Dob")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("s_Othernames")
+                        .HasColumnType("ntext");
+
+                    b.Property<string>("s_Surname")
+                        .HasColumnType("ntext");
+
+                    b.Property<string>("staffid")
+                        .HasColumnType("ntext");
+
+                    b.HasKey("Guid");
+
+                    b.ToTable("Query");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.QueuedMessage", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Bcc");
+
+                    b.Property<string>("Body");
+
+                    b.Property<string>("Cc");
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<string>("FromAddress");
+
+                    b.Property<string>("FromName");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<bool?>("IsHtml");
+
+                    b.Property<DateTime?>("SentOn");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<string>("Subject");
+
+                    b.Property<string>("ToAddress");
+
+                    b.Property<string>("ToName");
+
+                    b.Property<int?>("Tries");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("QueuedMessage");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.QueuedMessageAttachment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<string>("FileName");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<int?>("QueuedMessageId");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("QueuedMessageId");
+
+                    b.ToTable("QueuedMessageAttachment");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.QueuedTask", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime?>("CompletedAt");
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<string>("Data");
+
+                    b.Property<DateTime?>("FailedAt");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<int?>("Priority");
+
+                    b.Property<DateTime?>("QueuedAt");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<DateTime?>("StartedAt");
+
+                    b.Property<string>("Status")
+                        .HasMaxLength(255);
+
+                    b.Property<int?>("Tries");
+
+                    b.Property<string>("Type");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("QueuedTask");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.RedirectedDomain", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.Property<string>("Url");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("SiteId");
+
+                    b.ToTable("RedirectedDomain");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.ResizedImage", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<int?>("MediaFileId");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.Property<string>("Url")
+                        .HasMaxLength(1000);
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MediaFileId");
+
+                    b.ToTable("ResizedImage");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.ScheduledTask", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<int?>("EveryXSeconds");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<DateTime?>("LastComplete");
+
+                    b.Property<DateTime?>("LastQueuedAt");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<string>("Status")
+                        .HasMaxLength(255);
+
+                    b.Property<string>("Type");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ScheduledTask");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.ServiceTariff", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("AlternatePrice");
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<string>("Description");
+
+                    b.Property<int?>("GroupId");
+
+                    b.Property<string>("Groupname");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<string>("Name");
+
+                    b.Property<bool?>("PreauthorizationRequired");
+
+                    b.Property<decimal?>("Price");
+
+                    b.Property<string>("Remark");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<string>("Unit");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ServiceTariff");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.Setting", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<string>("Name");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.Property<string>("Value");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Setting");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.ShortCodeMsg", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<string>("Mobile");
+
+                    b.Property<string>("Msg");
+
+                    b.Property<DateTime?>("MsgTime");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<bool?>("Status");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ShortCodeMsg");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.Site", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("BaseUrl");
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<string>("Name");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Site");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.Sm", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("CreatedBy");
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<DateTime?>("DateDelivered");
+
+                    b.Property<DateTime?>("DeliveryDate");
+
+                    b.Property<int?>("EnrolleeId");
+
+                    b.Property<string>("FromId");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<string>("Message");
+
+                    b.Property<string>("Msisdn");
+
+                    b.Property<string>("ServerCode");
+
+                    b.Property<string>("ServerResponse");
+
+                    b.Property<string>("ServerStatus");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<string>("Status")
+                        .HasMaxLength(255);
+
+                    b.Property<string>("Type")
+                        .HasMaxLength(255);
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Sms");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.SmsConfig", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool?>("Active");
+
+                    b.Property<string>("BdaySmsTemplate");
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<int?>("Mode");
+
+                    b.Property<string>("Password");
+
+                    b.Property<bool?>("PreScheduleText");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.Property<string>("UserName");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("SmsConfig");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.SponsorShipType", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<string>("Typename");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("SponsorShipType");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.Staff", b =>
+                {
+                    b.Property<Guid>("Guid")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("CompanyId");
+
+                    b.Property<int?>("CompanySubsidiary");
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<int?>("Createdby");
+
+                    b.Property<bool?>("HasProfile");
+
+                    b.Property<int>("Id");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<bool?>("IsExpunged");
+
+                    b.Property<int?>("NewStaffId");
+
+                    b.Property<int?>("Profileid");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<string>("StaffFullname");
+
+                    b.Property<string>("StaffId");
+
+                    b.Property<int?>("StaffJobId");
+
+                    b.Property<int?>("StaffPlanid");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.Property<DateTime?>("stafflinkDate");
+
+                    b.Property<int?>("stafflinkUSer");
+
+                    b.HasKey("Guid");
+
+                    b.ToTable("Staff");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.StaffUploadJob", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Analysislink");
+
+                    b.Property<int?>("CompanyID");
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<string>("ExpungeMode")
+                        .HasMaxLength(255);
+
+                    b.Property<DateTime?>("FinishTime");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<string>("JobStatus")
+                        .HasMaxLength(255);
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<DateTime?>("StartTime");
+
+                    b.Property<int?>("Subsidiary");
+
+                    b.Property<int?>("TotalRecord");
+
+                    b.Property<int?>("TotalRecordDone");
+
+                    b.Property<int?>("TotalRecordFailed");
+
+                    b.Property<int?>("TotalRecordSuccess");
+
+                    b.Property<int?>("TotalStaffAdded");
+
+                    b.Property<int?>("TotalStaffForExpunged");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.Property<int?>("UploadedBy");
+
+                    b.Property<bool?>("approved");
+
+                    b.Property<int?>("approvedby");
+
+                    b.Property<DateTime?>("dateapproved");
+
+                    b.Property<string>("errorlist");
+
+                    b.Property<string>("filelink");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("StaffUploadJob");
                 });
 
             modelBuilder.Entity("NovoClasses.Models.State", b =>
@@ -1201,35 +4026,708 @@ namespace NovoCore.Data.Migrations
 
                     b.Property<string>("Code");
 
-                    b.Property<DateTime>("CreatedOn");
+                    b.Property<DateTime?>("CreatedOn");
 
-                    b.Property<int>("DelistedProviderPageId");
+                    b.Property<int?>("DelistedProviderPageId");
 
-                    b.Property<int>("EnrolleeDetailsPageId");
+                    b.Property<int?>("EnrolleeDetailsPageId");
 
-                    b.Property<int>("EnrolleeListPageId");
+                    b.Property<int?>("EnrolleeListPageId");
 
-                    b.Property<int>("EnrolleePageId");
+                    b.Property<int?>("EnrolleePageId");
 
-                    b.Property<int>("EnrolleeRegPageId");
+                    b.Property<int?>("EnrolleeRegPageId");
 
                     b.Property<Guid>("Guid");
 
-                    b.Property<bool>("IsDeleted");
+                    b.Property<bool?>("IsDeleted");
 
                     b.Property<string>("Name");
 
-                    b.Property<int>("ProviderPageId");
+                    b.Property<int?>("ProviderPageId");
 
-                    b.Property<bool>("Status");
+                    b.Property<int?>("SiteId");
 
-                    b.Property<DateTime>("UpdatedOn");
+                    b.Property<bool?>("Status");
 
-                    b.Property<long>("Zone");
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.Property<long?>("Zone");
 
                     b.HasKey("Id");
 
                     b.ToTable("State");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.StringResource", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<string>("Key");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<string>("UICulture");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.Property<string>("Value");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("StringResource");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.Subscription", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("AuthorizationNote");
+
+                    b.Property<int?>("AuthorizationStatus");
+
+                    b.Property<int?>("AuthorizedBy");
+
+                    b.Property<DateTime?>("AuthorizedDate");
+
+                    b.Property<int?>("CompanyId");
+
+                    b.Property<string>("Companyplans");
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<int?>("Createdby");
+
+                    b.Property<DateTime?>("DisapprovalDate");
+
+                    b.Property<string>("DisapprovalNote");
+
+                    b.Property<int?>("DisapprovedBy");
+
+                    b.Property<int?>("Duration");
+
+                    b.Property<DateTime?>("Expirationdate");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<string>("Note");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<DateTime?>("Startdate");
+
+                    b.Property<int?>("Status");
+
+                    b.Property<string>("SubscriptionCode");
+
+                    b.Property<string>("SubscriptionMode")
+                        .HasMaxLength(255);
+
+                    b.Property<string>("Subsidiaries");
+
+                    b.Property<int?>("SubsidiaryId");
+
+                    b.Property<int?>("Terminatedby");
+
+                    b.Property<string>("TerminationNote");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Subscription");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.Symposium", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.Property<string>("email");
+
+                    b.Property<string>("name");
+
+                    b.Property<string>("occupation");
+
+                    b.Property<string>("phone");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Symposium");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.Tag", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<string>("Name");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Tag");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.Tariff", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime?>("AuthorizedDate");
+
+                    b.Property<int?>("CreatedBy");
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<string>("Description");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<string>("Name");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<bool?>("Status");
+
+                    b.Property<int?>("TariffPageId");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.Property<int?>("authBy");
+
+                    b.Property<bool?>("authstatus");
+
+                    b.Property<int?>("defaultProvider");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Tariff");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.TariffCategory", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<string>("Description");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<string>("Name");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<int?>("TariffId");
+
+                    b.Property<int?>("Type");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TariffCategory");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.TaskShit", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<bool?>("Enabled");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<DateTime?>("LastRun");
+
+                    b.Property<string>("Name");
+
+                    b.Property<long?>("RunTimerSeconds");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.Property<bool?>("status");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TaskShit");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.TempEnrollee", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("Age");
+
+                    b.Property<string>("BranchID");
+
+                    b.Property<string>("BranchName");
+
+                    b.Property<int?>("Companyid");
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<int?>("Createdby");
+
+                    b.Property<DateTime?>("Dateexpunged");
+
+                    b.Property<DateTime?>("Datereceived");
+
+                    b.Property<DateTime?>("Dob");
+
+                    b.Property<string>("Emailaddress");
+
+                    b.Property<int?>("EnrolleePassportId");
+
+                    b.Property<string>("ExpungeNote");
+
+                    b.Property<int?>("Expungedby");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("HasRefPolicyNumber");
+
+                    b.Property<bool?>("Hasactivesubscription");
+
+                    b.Property<bool?>("Hasdependents");
+
+                    b.Property<bool?>("IdCardPrinted");
+
+                    b.Property<byte[]>("Imgraw");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<bool?>("Isexpundged");
+
+                    b.Property<string>("Lga");
+
+                    b.Property<int?>("Maritalstatus");
+
+                    b.Property<string>("Mobilenumber");
+
+                    b.Property<string>("Mobilenumber2");
+
+                    b.Property<string>("Occupation");
+
+                    b.Property<string>("Othernames");
+
+                    b.Property<string>("Policynumber");
+
+                    b.Property<string>("Preexistingmedicalhistory");
+
+                    b.Property<string>("Primaryprovider");
+
+                    b.Property<string>("RefPolicynumber");
+
+                    b.Property<string>("Residentialaddress");
+
+                    b.Property<byte[]>("S_Imgraw");
+
+                    b.Property<int?>("S_Sex");
+
+                    b.Property<string>("S_email");
+
+                    b.Property<string>("S_hospital");
+
+                    b.Property<string>("S_medicalhistory");
+
+                    b.Property<string>("S_mobile");
+
+                    b.Property<int?>("Sex");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<string>("Specialidcardfield1");
+
+                    b.Property<string>("Specialidcardfield2");
+
+                    b.Property<string>("Specialidcardfield3");
+
+                    b.Property<int?>("Sponsorshiptype");
+
+                    b.Property<string>("Sponsorshiptypenote");
+
+                    b.Property<string>("Sponsorshiptypeothername");
+
+                    b.Property<int?>("Staffprofileid");
+
+                    b.Property<int?>("Stateoforiginid");
+
+                    b.Property<int?>("Stateofresidence");
+
+                    b.Property<int?>("Status");
+
+                    b.Property<int?>("Subscriptionplanid");
+
+                    b.Property<string>("Surname");
+
+                    b.Property<string>("Title");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.Property<bool?>("addchild1");
+
+                    b.Property<bool?>("addchild2");
+
+                    b.Property<bool?>("addchild3");
+
+                    b.Property<bool?>("addchild4");
+
+                    b.Property<bool?>("addspouse");
+
+                    b.Property<DateTime?>("child1_Dob");
+
+                    b.Property<byte[]>("child1_Imgraw");
+
+                    b.Property<string>("child1_Othernames");
+
+                    b.Property<int?>("child1_Sex");
+
+                    b.Property<string>("child1_Surname");
+
+                    b.Property<string>("child1_email");
+
+                    b.Property<string>("child1_hospital");
+
+                    b.Property<string>("child1_medicalhistory");
+
+                    b.Property<string>("child1_mobile");
+
+                    b.Property<DateTime?>("child2_Dob");
+
+                    b.Property<byte[]>("child2_Imgraw");
+
+                    b.Property<string>("child2_Othernames");
+
+                    b.Property<int?>("child2_Sex");
+
+                    b.Property<string>("child2_Surname");
+
+                    b.Property<string>("child2_email");
+
+                    b.Property<string>("child2_hospital");
+
+                    b.Property<string>("child2_medicalhistory");
+
+                    b.Property<string>("child2_mobile");
+
+                    b.Property<DateTime?>("child3_Dob");
+
+                    b.Property<byte[]>("child3_Imgraw");
+
+                    b.Property<string>("child3_Othernames");
+
+                    b.Property<int?>("child3_Sex");
+
+                    b.Property<string>("child3_Surname");
+
+                    b.Property<string>("child3_email");
+
+                    b.Property<string>("child3_hospital");
+
+                    b.Property<string>("child3_medicalhistory");
+
+                    b.Property<string>("child3_mobile");
+
+                    b.Property<DateTime?>("child4_Dob");
+
+                    b.Property<byte[]>("child4_Imgraw");
+
+                    b.Property<string>("child4_Othernames");
+
+                    b.Property<int?>("child4_Sex");
+
+                    b.Property<string>("child4_Surname");
+
+                    b.Property<string>("child4_email");
+
+                    b.Property<string>("child4_hospital");
+
+                    b.Property<string>("child4_medicalhistory");
+
+                    b.Property<string>("child4_mobile");
+
+                    b.Property<int?>("officestate");
+
+                    b.Property<DateTime?>("s_Dob");
+
+                    b.Property<string>("s_Othernames");
+
+                    b.Property<string>("s_Surname");
+
+                    b.Property<string>("staffid");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TempEnrollee");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.TerminatedSubscription", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("AuthorizationNote");
+
+                    b.Property<int?>("AuthorizationStatus");
+
+                    b.Property<string>("AuthorizedBy");
+
+                    b.Property<DateTime?>("AuthorizedDate");
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<string>("Note");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<int?>("SubscriptionId");
+
+                    b.Property<int?>("TerminatedByUserId");
+
+                    b.Property<DateTime?>("Terminationdate");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TerminatedSubscription");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.testable", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("Code");
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<string>("Tony");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("testable");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.UrlHistory", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.Property<string>("UrlSegment");
+
+                    b.Property<int?>("WebpageId");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("UrlHistory");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.UserNotification", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ClickAction");
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<string>("Message");
+
+                    b.Property<bool?>("Read");
+
+                    b.Property<int?>("RoleId");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<int?>("Target");
+
+                    b.Property<int?>("Type");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.Property<string>("UserId");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("UserNotification");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.UserProfileData", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Bio");
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<string>("ProfileInfoType")
+                        .IsRequired()
+                        .HasMaxLength(255);
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.Property<int?>("UserId");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("UserProfileData");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.VettingProtocol", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<string>("Diagnosis");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.Property<string>("investigations");
+
+                    b.Property<string>("specialist");
+
+                    b.Property<string>("treatment");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("VettingProtocol");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.WrongProfile", b =>
+                {
+                    b.Property<int>("id");
+
+                    b.Property<int?>("staffprofileid");
+
+                    b.HasKey("id");
+
+                    b.ToTable("WrongProfile");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.Zone", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Code");
+
+                    b.Property<long?>("Countryid");
+
+                    b.Property<DateTime?>("CreatedOn");
+
+                    b.Property<Guid>("Guid");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<string>("Name");
+
+                    b.Property<int?>("SiteId");
+
+                    b.Property<bool?>("Status");
+
+                    b.Property<DateTime?>("UpdatedOn");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Zone");
                 });
 
             modelBuilder.Entity("NovoCore.Models.ApplicationRole", b =>
@@ -1333,49 +4831,6 @@ namespace NovoCore.Data.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("NovoCore.Models.FacilitiesAllowed", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("AddedBy");
-
-                    b.Property<string>("Address");
-
-                    b.Property<string>("CompanyId");
-
-                    b.Property<string>("CompanyName");
-
-                    b.Property<string>("CompanyPlanId");
-
-                    b.Property<DateTime?>("CreatedOn");
-
-                    b.Property<string>("DeletedBy");
-
-                    b.Property<DateTime?>("DeletedOn");
-
-                    b.Property<int?>("FacilitiesAllowedPageId");
-
-                    b.Property<Guid?>("Guid");
-
-                    b.Property<bool?>("IsDeleted");
-
-                    b.Property<string>("Name");
-
-                    b.Property<string>("Planid");
-
-                    b.Property<string>("ProviderId");
-
-                    b.Property<int?>("SiteId");
-
-                    b.Property<string>("Status");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("FacilitiesAllowed");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("NovoCore.Models.ApplicationRole")
@@ -1421,60 +4876,127 @@ namespace NovoCore.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
+            modelBuilder.Entity("NovoClasses.Models.BatchJob", b =>
+                {
+                    b.HasOne("NovoClasses.Models.Batch", "Batch")
+                        .WithMany("BatchJobs")
+                        .HasForeignKey("BatchId");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.BatchRun", b =>
+                {
+                    b.HasOne("NovoClasses.Models.Batch", "Batch")
+                        .WithMany("BatchRuns")
+                        .HasForeignKey("BatchId");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.BatchRunResult", b =>
+                {
+                    b.HasOne("NovoClasses.Models.BatchJob", "BatchJob")
+                        .WithMany("BatchRunResults")
+                        .HasForeignKey("BatchJobId");
+
+                    b.HasOne("NovoClasses.Models.BatchRun", "BatchRun")
+                        .WithMany("BatchRunResults")
+                        .HasForeignKey("BatchRunId");
+                });
+
             modelBuilder.Entity("NovoClasses.Models.Claim", b =>
                 {
                     b.HasOne("NovoClasses.Models.ClaimBatch", "ClaimBatch")
                         .WithMany("Claims")
-                        .HasForeignKey("ClaimBatchId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("ClaimBatchId");
                 });
 
             modelBuilder.Entity("NovoClasses.Models.ClaimBatch", b =>
                 {
                     b.HasOne("NovoClasses.Models.PaymentBatch", "PaymentBatch")
                         .WithMany("ClaimBatches")
-                        .HasForeignKey("paymentbatchId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("paymentbatchId");
                 });
 
             modelBuilder.Entity("NovoClasses.Models.ClaimDrug", b =>
                 {
                     b.HasOne("NovoClasses.Models.Claim", "Claim")
                         .WithMany("ClaimDrugs")
-                        .HasForeignKey("ClaimId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("ClaimId");
                 });
 
             modelBuilder.Entity("NovoClasses.Models.ClaimService", b =>
                 {
                     b.HasOne("NovoClasses.Models.Claim", "Claim")
                         .WithMany("ClaimServices")
-                        .HasForeignKey("ClaimId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("ClaimId");
                 });
 
             modelBuilder.Entity("NovoClasses.Models.CompanyBranch", b =>
                 {
                     b.HasOne("NovoClasses.Models.Company", "Company")
                         .WithMany("CompanyBranches")
-                        .HasForeignKey("companyId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("companyId");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.ConnectCareBeneficiary", b =>
+                {
+                    b.HasOne("NovoClasses.Models.ConnectCareSponsor", "ConnectCareSponsor")
+                        .WithMany("ConnectCareBeneficiaries")
+                        .HasForeignKey("ConnectCareSponsorId");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.FormListOption", b =>
+                {
+                    b.HasOne("NovoClasses.Models.FormProperty", "FormProperty")
+                        .WithMany("FormListOptions")
+                        .HasForeignKey("FormPropertyId");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.FormValue", b =>
+                {
+                    b.HasOne("NovoClasses.Models.FormPosting", "FormPosting")
+                        .WithMany("FormValues")
+                        .HasForeignKey("FormPostingId");
                 });
 
             modelBuilder.Entity("NovoClasses.Models.IncomingClaim", b =>
                 {
                     b.HasOne("NovoClasses.Models.ClaimBatch", "ClaimBatch")
                         .WithMany("IncomingClaims")
-                        .HasForeignKey("ClaimBatchId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("ClaimBatchId");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.ProviderClaimBK", b =>
+                {
+                    b.HasOne("NovoClasses.Models.Provider", "Provider")
+                        .WithMany("ProviderClaimBKs")
+                        .HasForeignKey("providerId");
                 });
 
             modelBuilder.Entity("NovoClasses.Models.ProviderService", b =>
                 {
                     b.HasOne("NovoClasses.Models.Provider", "Provider")
-                        .WithMany("ProviderServices")
-                        .HasForeignKey("providerId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .WithMany("ProviderServices1")
+                        .HasForeignKey("providerId");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.QueuedMessageAttachment", b =>
+                {
+                    b.HasOne("NovoClasses.Models.QueuedMessage", "QueuedMessage")
+                        .WithMany("QueuedMessageAttachments")
+                        .HasForeignKey("QueuedMessageId");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.RedirectedDomain", b =>
+                {
+                    b.HasOne("NovoClasses.Models.Site", "Site")
+                        .WithMany("RedirectedDomains")
+                        .HasForeignKey("SiteId");
+                });
+
+            modelBuilder.Entity("NovoClasses.Models.ResizedImage", b =>
+                {
+                    b.HasOne("NovoClasses.Models.MediaFile", "MediaFile")
+                        .WithMany("ResizedImages")
+                        .HasForeignKey("MediaFileId");
                 });
 #pragma warning restore 612, 618
         }

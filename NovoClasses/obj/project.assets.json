@@ -694,11 +694,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\freempire\\source\\repos\\NovoCoreLit\\NovoClasses\\NovoClasses.csproj",
+      "projectUniqueName": "C:\\Users\\freempire\\source\\repos\\NovoCore\\NovoClasses\\NovoClasses.csproj",
       "projectName": "NovoClasses",
-      "projectPath": "C:\\Users\\freempire\\source\\repos\\NovoCoreLit\\NovoClasses\\NovoClasses.csproj",
+      "projectPath": "C:\\Users\\freempire\\source\\repos\\NovoCore\\NovoClasses\\NovoClasses.csproj",
       "packagesPath": "C:\\Users\\freempire\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\freempire\\source\\repos\\NovoCoreLit\\NovoClasses\\obj\\",
+      "outputPath": "C:\\Users\\freempire\\source\\repos\\NovoCore\\NovoClasses\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

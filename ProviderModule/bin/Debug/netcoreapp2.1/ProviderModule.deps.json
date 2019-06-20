@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.1",
-    "signature": "3d650778e3500094e38cb51398f5ded5c197beae"
+    "signature": "6377f10ff732de289b3fea5c440998cc5d1eec33"
   },
   "compilationOptions": {
     "defines": [
@@ -24,12 +24,15 @@
     ".NETCoreApp,Version=v2.1": {
       "ProviderModule/1.0.0": {
         "dependencies": {
+          "DataTables.AspNet.Core": "2.0.2",
           "Microsoft.AspNetCore.App": "2.1.1",
           "Microsoft.AspNetCore.Razor.Design": "2.1.2",
           "Microsoft.NETCore.App": "2.1.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.1.9",
           "NovoClasses": "1.0.0",
-          "NovoCore": "1.0.0"
+          "NovoCore": "1.0.0",
+          "datatables.net": "1.10.18",
+          "datatables.net.core": "1.10.15.1"
         },
         "runtime": {
           "ProviderModule.dll": {}
@@ -38,6 +41,31 @@
           "ProviderModule.dll": {}
         }
       },
+      "DataTables.AspNet.Core/2.0.2": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.3"
+        },
+        "runtime": {
+          "lib/netstandard1.1/DataTables.AspNet.Core.dll": {
+            "assemblyVersion": "2.0.2.0",
+            "fileVersion": "2.0.2.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard1.1/DataTables.AspNet.Core.dll": {}
+        }
+      },
+      "datatables.net/1.10.18": {
+        "dependencies": {
+          "jQuery": "1.12.4"
+        }
+      },
+      "datatables.net.core/1.10.15.1": {
+        "dependencies": {
+          "jQuery": "1.12.4"
+        }
+      },
+      "jQuery/1.12.4": {},
       "Microsoft.AspNetCore.Razor.Design/2.1.2": {},
       "Microsoft.CodeAnalysis.CSharp.Workspaces/2.8.0": {
         "dependencies": {
@@ -3484,6 +3512,34 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "DataTables.AspNet.Core/2.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ZRZoewp8OfbdGMNmz+GaAUugdQ20SaL38PbSsu95cRXeOLOZ2cu9ttft5rgCEbWXhny1Wy9WEW2AP6oZVFAR3A==",
+      "path": "datatables.aspnet.core/2.0.2",
+      "hashPath": "datatables.aspnet.core.2.0.2.nupkg.sha512"
+    },
+    "datatables.net/1.10.18": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-faDOoThS3fALNn8rmgNL1oZXyp7dXbFXcln/g2MV7VeSua8dmQjxMJRgRiADmBA2w5wTMsAVENgJVw0GrMeG5A==",
+      "path": "datatables.net/1.10.18",
+      "hashPath": "datatables.net.1.10.18.nupkg.sha512"
+    },
+    "datatables.net.core/1.10.15.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0SFxZo4QPfdB5FXMA/jS76l4Nq9Q7Bf0vWdGHiViUR3wRFy057c8aU6QD+4zmIihMe9WBSkLuFDrNJgUeDsGXw==",
+      "path": "datatables.net.core/1.10.15.1",
+      "hashPath": "datatables.net.core.1.10.15.1.nupkg.sha512"
+    },
+    "jQuery/1.12.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pIYtWlFI5PGlJVB8jm9H96pAQ27jQhA9sCxMeGweeC3ByQRaB8BwkIuGdTt4go3IEKTmmfRC2y5k0FLFizWDQg==",
+      "path": "jquery/1.12.4",
+      "hashPath": "jquery.1.12.4.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Razor.Design/2.1.2": {
       "type": "package",

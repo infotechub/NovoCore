@@ -1,0 +1,24 @@
+﻿@model NovoCore.ViewModel.Bills
+@{
+    ViewData["Title"] = "SavedBills";
+}
+
+
+
+<p>Total Bills: @ViewBag.claimscount</p>@ViewBag.claimscount
+<table border="1" cellpadding="2" cellspacing="2">
+
+    @foreach (var claim in ViewBag.claims)
+    {
+
+    <tr>
+        <td>@claim.enrolleeFullname</td>
+        <td>@claim.enrolleePolicyNumber</td>
+        <td>@claim.enrolleeCompanyName</td>
+        <td>@claim.ServiceDate</td>
+        <td>@claim.Diagnosis</td>
+        <td>@claim.Durationoftreatment</td>
+        <td>@claim.CreatedOn</td>
+    </tr>
+    }
+</table>
