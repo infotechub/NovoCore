@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NovoCore", "NovoCore\NovoCo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NovoClasses", "NovoClasses\NovoClasses.csproj", "{05F0342B-6950-46D5-8B3D-D97835FF0B60}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProviderModule", "ProviderModule\ProviderModule.csproj", "{CCA39A67-CB1A-42FE-94E7-066667EEB53B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProviderModule", "ProviderModule\ProviderModule.csproj", "{CCA39A67-CB1A-42FE-94E7-066667EEB53B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

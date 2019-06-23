@@ -4,4 +4,8 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Mvc.JQuery.DataTables.AspNetCore" Version="1.5.44" />
+  </ItemGroup>
+
 </Project>

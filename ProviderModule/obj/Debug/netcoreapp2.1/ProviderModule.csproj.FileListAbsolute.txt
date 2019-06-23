@@ -84,3 +84,4 @@ C:\Users\freempire\source\repos\NovoCore\ProviderModule\obj\Debug\netcoreapp2.1\
 C:\Users\freempire\source\repos\NovoCore\ProviderModule\obj\Debug\netcoreapp2.1\Razor\Views\Claim\SavedBills.g.cshtml.cs
 C:\Users\freempire\source\repos\NovoCore\ProviderModule\obj\Debug\netcoreapp2.1\Razor\Views\Claim\SubmittedBills.g.cshtml.cs
 C:\Users\freempire\source\repos\NovoCore\ProviderModule\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs
+C:\Users\freempire\source\repos\NovoCore\ProviderModule\obj\Debug\netcoreapp2.1\Razor\Views\Claim\Test.g.cshtml.cs

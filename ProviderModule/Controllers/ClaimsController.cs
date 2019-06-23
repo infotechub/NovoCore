@@ -26,8 +26,8 @@ namespace ProviderModule.Controllers
 
 
         // [HttpGet]
-        //[Route("api/[Controller]")]
-        public ViewResult SavedBills(int Id, int ProviderId, string enrolleePolicyNumber, string enrolleeCompanyName, string ServiceDate)
+        
+        public IActionResult SavedBills(int Id, int ProviderId, string enrolleePolicyNumber, string enrolleeCompanyName, string ServiceDate)
         {
            
 
