@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NovoCore.Data;
@@ -9,6 +10,7 @@ using NovoCore.ViewModel;
 
 namespace NovoCore.Controllers
 {
+    [EnableCors("AllowOrigin")]
     [Route ("api/[Controller]")]
     public class ClaimController : Controller
     {

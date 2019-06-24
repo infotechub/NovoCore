@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +11,7 @@ using NovoCore.Data;
 
 namespace NovoCore.Controllers
 {
+    [EnableCors("AllowOrigin")]
     [Route("api/[controller]")]
     [ApiController]
     public class Claims1Controller : ControllerBase
@@ -25,7 +27,9 @@ namespace NovoCore.Controllers
         [HttpGet]
         public IEnumerable<Claim> GetClaims()
         {
-            return _context.Claims;
+
+
+            return _context.Claims.Where(p => p.ProviderId == 1029).ToList();
         }
 
         // GET: api/Claims1/5

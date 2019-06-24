@@ -15,7 +15,7 @@
     
         <div class="panel-body">
             <table id="claims" class="table table-striped table-bordered table-hover table-responsive" width="100%">
-                <thead class="thin-border-bottom">
+                <thead class="thin-border-bottom" >
                     <tr>
                         <th>Full Name</th>
                         <th>Policy Number</th>
@@ -23,26 +23,14 @@
                         <th>Service Date</th>
                         <th>Diagnosis</th>
                         <th>Treatment Duration</th>
+                        <th>Service Charge</th>
+                        <th>Drug Charge</th>
+                        <th>Total Charge</th>
                         <th>Added On</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
-                @foreach (var claim in ViewBag.claims)
-                {
-
-                <tr>
-                    <td>@claim.enrolleeFullname</td>
-                    <td>@claim.enrolleePolicyNumber</td>
-                    <td>@claim.enrolleeCompanyName</td>
-                    <td>@claim.ServiceDate</td>
-                    <td>@claim.Diagnosis</td>
-                    <td>@claim.Durationoftreatment</td>
-                    <td>@claim.CreatedOn</td>
-                    <td><button data-claim-id="@claim.Id" class="btn-link js-delete">Delete</button></td>
-
-
-                </tr>
-                }
+               
             </table>
         </div>
     </div>
@@ -55,7 +43,75 @@
 
 <script type="text/javascript">
     (function ($) {
-        $("#claims").DataTable();
+        $("#claims").DataTable({
+            ajax: {
+                url: "https://localhost:44376/api/Claims1",
+                dataSrc: ""
+            },
+            columns: [{
+                data: "enrolleeFullname",
+                render: function (data, type, claim) {
+                    return "<a href=' " + claim.id + "'>" + claim.enrolleeFullname + "</a>";
+                }
+            },
+                {
+                    data: "enrolleePolicyNumber"
+
+                },
+                {
+                    data: "enrolleeCompanyName"
+                },
+                {
+                    data: "serviceDate"
+                },
+                {
+                    data: "diagnosis"
+                },
+                {
+                    data: "durationoftreatment"
+                },
+                {
+                    data: "initialAmount"
+                    
+                },
+                {
+                    data: "initialAmount"
+                   
+                },
+                {
+                    data: "",
+                    render: function (data) {
+                        return "1000";
+                    }
+                },
+                {
+                    data: "createdOn"
+                },
+               
+                {
+                    data: "id",
+                    render: function (data) {
+                        return "<button class='btn-link js-update' data-customer-id=" + data + "> Edit</button>";
+                    }
+
+                },
+            ]
+            
+
+
+        });
+        $("#claims").on("click", ".js-update", function () {
+            var button = $(this);
+            if (confirm("Are you sure you want to update?")) {
+                $.ajax({
+                    url: "https://localhost:44376/api/Claims1" + button.attr("data-claim-id"),
+                    method: "EDIT",
+                    success: function () {
+                        button.parents("tr").remove();
+                    }
+                });
+            }
+        });
         $("#claims").on("click", ".js-delete", function () {
             var button = $(this);
             if (confirm("Are you sure you want to delete?")) {

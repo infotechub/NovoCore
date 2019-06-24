@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NovoCore.Data;
@@ -9,6 +10,7 @@ using NovoCore.ViewModel;
 
 namespace ProviderModule.Controllers
 {
+    [EnableCors("AllowOrigin")]
     public class CodesController : Controller
     {
         private ApplicationDbContext _context;

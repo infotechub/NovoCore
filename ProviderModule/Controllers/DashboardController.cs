@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NovoClasses.Models;
@@ -13,6 +14,7 @@ using NovoCore.ViewModel;
 namespace ProviderModule.Controllers
 {
     //[Route("api/[Controller]")]
+    [EnableCors("AllowOrigin")]
     public class DashboardController : Controller
     {
         private ApplicationDbContext _context;
