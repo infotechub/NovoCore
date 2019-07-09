@@ -25,11 +25,35 @@ namespace NovoCore.Controllers
 
         // GET: api/Claims1
         [HttpGet]
-        public IEnumerable<Claim> GetClaims()
+        public ActionResult<Claim> GetClaims(int ProviderId)
         {
 
+                           var myclaim = (from i in _context.Claims
+                           where i.ProviderId == ProviderId && i.status == "Captured" && i.IsDeleted == false
+                           select new
+                           {
 
-            return _context.Claims.Where(p => p.ProviderId == 1029).ToList();
+                               drugAmount = _context.ClaimDrugs.Where(c => c.ClaimId == i.Id).Sum(c => c.InitialAmount),
+                               serviceAmount = _context.ClaimServices.Where(c => c.ClaimId == i.Id).Sum(c => c.InitialAmount),
+                               totalcharge =  _context.ClaimDrugs.Where(c => c.ClaimId == i.Id).Sum(c => c.InitialAmount) + _context.ClaimServices.
+                                              Where(c => c.ClaimId == i.Id).Sum(c => c.InitialAmount),
+                               i.Id,
+                               i.ClaimsSerialNo,
+                               i.enrolleeFullname,
+                               i.enrolleeCompanyName,
+                               i.enrolleePolicyNumber,
+                               i.EnrolleePlan,
+                               i.Diagnosis,
+                               i.Durationoftreatment,
+                               i.IsDeleted,
+                               i.ProviderId,
+                               i.status,
+                               i.CreatedOn,
+                               i.ServiceDate
+                           }).ToList();
+
+
+            return Ok(myclaim);
         }
 
         // GET: api/Claims1/5

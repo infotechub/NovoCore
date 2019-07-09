@@ -12921,23 +12921,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\freempire\\.nuget\\packages\\": {},
+    "C:\\Users\\akinb\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\freempire\\source\\repos\\NovoCore\\NovoCore\\NovoCore.csproj",
+      "projectUniqueName": "C:\\Users\\akinb\\source\\NovoCore\\NovoCore\\NovoCore.csproj",
       "projectName": "NovoCore",
-      "projectPath": "C:\\Users\\freempire\\source\\repos\\NovoCore\\NovoCore\\NovoCore.csproj",
-      "packagesPath": "C:\\Users\\freempire\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\freempire\\source\\repos\\NovoCore\\NovoCore\\obj\\",
+      "projectPath": "C:\\Users\\akinb\\source\\NovoCore\\NovoCore\\NovoCore.csproj",
+      "packagesPath": "C:\\Users\\akinb\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\akinb\\source\\NovoCore\\NovoCore\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\freempire\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\akinb\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -12950,8 +12950,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\freempire\\source\\repos\\NovoCore\\NovoClasses\\NovoClasses.csproj": {
-              "projectPath": "C:\\Users\\freempire\\source\\repos\\NovoCore\\NovoClasses\\NovoClasses.csproj"
+            "C:\\Users\\akinb\\source\\NovoCore\\NovoClasses\\NovoClasses.csproj": {
+              "projectPath": "C:\\Users\\akinb\\source\\NovoCore\\NovoClasses\\NovoClasses.csproj"
             }
           }
         }

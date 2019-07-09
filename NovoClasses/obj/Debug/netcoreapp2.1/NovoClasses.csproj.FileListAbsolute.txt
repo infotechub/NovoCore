@@ -24,3 +24,12 @@ C:\Users\freempire\source\repos\NovoCore\NovoClasses\obj\Debug\netcoreapp2.1\Nov
 C:\Users\freempire\source\repos\NovoCore\NovoClasses\bin\Debug\netcoreapp2.1\NovoClasses.deps.json
 C:\Users\freempire\source\repos\NovoCore\NovoClasses\bin\Debug\netcoreapp2.1\NovoClasses.dll
 C:\Users\freempire\source\repos\NovoCore\NovoClasses\bin\Debug\netcoreapp2.1\NovoClasses.pdb
+C:\Users\akinb\source\NovoCore\NovoClasses\bin\Debug\netcoreapp2.1\NovoClasses.deps.json
+C:\Users\akinb\source\NovoCore\NovoClasses\bin\Debug\netcoreapp2.1\NovoClasses.dll
+C:\Users\akinb\source\NovoCore\NovoClasses\bin\Debug\netcoreapp2.1\NovoClasses.pdb
+C:\Users\akinb\source\NovoCore\NovoClasses\obj\Debug\netcoreapp2.1\NovoClasses.csprojAssemblyReference.cache
+C:\Users\akinb\source\NovoCore\NovoClasses\obj\Debug\netcoreapp2.1\NovoClasses.csproj.CoreCompileInputs.cache
+C:\Users\akinb\source\NovoCore\NovoClasses\obj\Debug\netcoreapp2.1\NovoClasses.AssemblyInfoInputs.cache
+C:\Users\akinb\source\NovoCore\NovoClasses\obj\Debug\netcoreapp2.1\NovoClasses.AssemblyInfo.cs
+C:\Users\akinb\source\NovoCore\NovoClasses\obj\Debug\netcoreapp2.1\NovoClasses.dll
+C:\Users\akinb\source\NovoCore\NovoClasses\obj\Debug\netcoreapp2.1\NovoClasses.pdb

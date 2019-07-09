@@ -31,7 +31,7 @@ namespace NovoCore.Controllers
 
         // [HttpGet]
         //[Route("api/[Controller]")]
-        public ViewResult Index(int ProviderId, string StaffId, string Policynumber, string Mobilenumber, string StaffFullname)
+        public ViewResult Abount(int ProviderId, string StaffId, string Policynumber, string Mobilenumber, string StaffFullname)
         {
             var previousDate = DateTime.Now.AddMonths(-1);
             var date = new DateTime(previousDate.Year, previousDate.Month, DateTime.Now.Day);
@@ -39,8 +39,8 @@ namespace NovoCore.Controllers
             // ViewBag.providers = _context.Provider.Where(x => x.Id == 1029);
             //ViewBag.claimbatches = _context.ClaimBatch.Where(x => x.ProviderId == ProviderId);
             // ViewBag.claim = _context.Claim.Where(x => x.ProviderId == ProviderId).Include(c => c.ClaimDrugs).Include(s => s.ClaimServices);
-            ViewBag.subittedcount = _context.Claims.Count(x => x.ProviderId == 1029 && x.status == "Vetting");
-            ViewBag.savedcount = _context.Claims.Count(x => x.ProviderId == 1029 && x.status == "Captured");
+            ViewBag.subittedcount = _context.Claims.Count(x => x.ProviderId == 1026 && x.status == "Vetting");
+            ViewBag.savedcount = _context.Claims.Count(x => x.ProviderId == 1026 && x.status == "Captured");
             ViewBag.facilitiesallowed = _context.FacilitiesAlloweds;
             ViewBag.enrollee = _context.Enrollees.Where(x => x.Policynumber == "Policynumber" || x.Mobilenumber == "Mobilenumber" || x.Mobilenumber2 == "Mobilenumber");
             ViewBag.ClaimBatch = _context.Claims.Where(x => x.ProviderId == 1029).Include(c => c.ClaimDrugs).Include(s => s.ClaimServices);

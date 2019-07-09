@@ -7,20 +7,176 @@
 
 
 
-@Model.Provider.Name<br />
-@Model.Enrollee.Surname  @Model.Enrollee.Othernames<br />
-@Model.Enrollee.EnrolleePassportId<br />
-@Model.Enrollee.Policynumber<br />
-@Model.Enrollee.Sex<br />
-@Model.Staff.CompanyId<br />
-@Model.Staff.StaffFullname<br />
-@Model.Company.Name<br />
-Verification Code: @ViewBag.randomLessThan100
+<div class="py-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-md-3" style="">
 
-@ViewBag.submittedcount
 
 
-<p style="color:red">@ViewBag.FacilitiesAllowed</p>
+                                            </div>
+                                            <div class="col-md-3" style="">
+
+                                            </div>
+                                          
+                                            <div class="col-md-6" style="">
+                                                <p>Welcome, <b>@Model.Provider.Name Portal</b></p>
+
+                                                <hr/>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+
+<div class="py-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-md-3" style="">
+                                                <div class="card bg-light mb-3">
+                                                    <div class="card-header bg-secondary py-0">
+                                                        <ul class="nav nav-pills card-header-pills" style="">
+                                                            <li class="nav-item"><i class="fa fa-fw fa-4x text-white fa-bell">&nbsp;</i></li>
+                                                            <li class="nav-item" style="">
+                                                                <a class="nav-link text-white" href="#">
+                                                                    <h4 class="">Get Notify</h4>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="card-body bg-secondary py-0">
+                                                        <ul class="list-group">
+                                                            <li class="list-group-item d-flex justify-content-between align-items-center text-white" style="	background-image: linear-gradient(to bottom, #4f70ce, #4f70ce);	background-position: top left;	background-size: 100%;	background-repeat: repeat;">Messages<span class="badge badge-primary badge-pill">14</span> </li>
+                                                            <li class="list-group-item d-flex justify-content-between align-items-center flex-grow-1 text-white" style="	background-image: linear-gradient(to bottom, #4f70ce, #4f70ce);	background-position: top left;	background-size: 100%;	background-repeat: repeat;">Push Notification&nbsp;<span class="badge badge-primary badge-pill">2</span> </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3" style="">
+                                                <div class="card bg-light mb-3">
+                                                    <div class="card-header py-0 bg-danger" style="	background-image: linear-gradient(to bottom, #ef3e42, #ef3e42);	background-position: top left;	background-size: 100%;	background-repeat: repeat;">
+                                                        <ul class="nav nav-pills card-header-pills" style="	background-image: linear-gradient(to bottom, #ef3e42, #ef3e42);	background-position: top left;	background-size: 100%;	background-repeat: repeat;">
+                                                            <li class="nav-item"><i class="fa fa-fw fa-4x text-white fa-floppy-o">&nbsp;</i></li>
+                                                            <li class="nav-item" style="">
+                                                                <a class="nav-link text-white" href="#">
+                                                                    <h4 class="">July Bills</h4>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="card-body py-0 bg-danger" style="	background-image: linear-gradient(to bottom, #ef3e42, #ef3e42);	background-position: top left;	background-size: 100%;	background-repeat: repeat;">
+                                                        <ul class="list-group">
+                                                            <li class="list-group-item d-flex justify-content-between align-items-center text-white" style="	background-image: linear-gradient(to bottom, #ef3e42, #ef3e42);	background-position: top left;	background-size: 100%;	background-repeat: repeat;">Captured Bills<span class="badge badge-primary badge-pill">@ViewBag.savedcount</span> </li>
+                                                            <li class="list-group-item d-flex justify-content-between align-items-center flex-grow-1 text-white" style="	background-image: linear-gradient(to bottom, #ef3e42, #ef3e42);	background-position: top left;	background-size: 100%;	background-repeat: repeat;">Submitted Bills&nbsp;<span class="badge badge-primary badge-pill">@ViewBag.submittedcount</span> </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3" style="">
+                                                <div class="card mb-3 bg-primary">
+                                                    <div class="card-header py-0 bg-primary">
+                                                        <ul class="nav nav-pills card-header-pills" style="">
+                                                            <li class="nav-item"><i class="fa fa-4x text-white fa-money" style="">&nbsp;</i></li>
+                                                            <li class="nav-item" style="">
+                                                                <a class="nav-link text-white" href="#">
+                                                                    <h4 class="">Payments</h4>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="card-body py-0 bg-primary">
+                                                        <ul class="list-group">
+                                                            <li class="list-group-item d-flex justify-content-between align-items-center text-white p-0" style="	background-image: linear-gradient(to bottom, #1e90ff, #1e90ff);	background-position: top left;	background-size: 100%;	background-repeat: repeat;">Last Payment<span class="badge badge-primary badge-pill">142012</span> </li>
+                                                            <li class="list-group-item d-flex justify-content-between align-items-center flex-grow-1 text-white p-0" style="	background-image: linear-gradient(to bottom, #1e90ff, #1e90ff);	background-position: top left;	background-size: 100%;	background-repeat: repeat;">Payment Date&nbsp;<span class="badge badge-primary badge-pill">22nd May</span> </li>
+                                                            <li class="list-group-item d-flex justify-content-between align-items-center flex-grow-1 text-white list-group-item-success" style="	background-image: linear-gradient(to bottom, #1e90ff, #1e90ff);	background-position: top left;	background-size: 100%;	background-repeat: repeat;">Payment For&nbsp;<span class="badge badge-primary badge-pill">Jan., 2019</span> </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3" style="">
+                                                <div class="card bg-light mb-3">
+                                                    <div class="card-header py-0 bg-dark">
+                                                        <ul class="nav nav-pills card-header-pills" style="">
+                                                            <li class="nav-item"><i class="fa fa-fw fa-4x text-white fa-exchange">&nbsp;</i></li>
+                                                            <li class="nav-item" style="">
+                                                                <a class="nav-link text-white" href="#">
+                                                                    <h4 class="">Approval</h4>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="card-body py-0 bg-dark">
+                                                        <ul class="list-group">
+                                                            <li class="list-group-item d-flex justify-content-between align-items-center text-white" style="	background-image: linear-gradient(to bottom, #000, #000);	background-position: top left;	background-size: 100%;	background-repeat: repeat;">Codes Request<span class="badge badge-primary badge-pill">14</span> </li>
+                                                            <li class="list-group-item d-flex justify-content-between align-items-center flex-grow-1 text-white" style="	background-image: linear-gradient(to bottom, #000, #000);	background-position: top left;	background-size: 100%;	background-repeat: repeat;">Codes Given&nbsp;<span class="badge badge-primary badge-pill">2</span> </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr />
+<div class="py-3" style="">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-8" style="	background-image: linear-gradient(to bottom, red, wh);	background-position: top left;	background-size: 100%;	background-repeat: repeat;">
+                        <h3 class="text-center bg-danger text-white" style="	background-image: url(Images/ju-on-e6XsI7qqvAA-unsplash.jpg);	background-position: top left;	background-size: 100%;	background-repeat: repeat;"><br><b>VERIFY ENROLLEE HERE</b><br><br></h3>
+                        <form class="" style="	box-shadow: 0px 0px 4px  black;">
+                            <div class="form-group" style=""> <label class="text-center" style=""><b><b contenteditable="true">&nbsp; &nbsp;&nbsp;<br><br>Verify/Authenticate Novo Health Enrollee using Policy Number, EVS Code, Staff Id or Phone Number</b></b><br><br><br><br></label> <input type="" class="form-control form-control-lg w-75 ml-5 pl-5" placeholder="Enter Policy Number/ EVS Code / Staff Id / Phone Number" required="required" name="option"> <small class="form-text text-muted"></small> </div>
+                            <div class="form-group"> <input type="radio" class="form-control w-25" placeholder="VISIT TYPE" required="required" name="visittype"> </div>
+                            <button type="submit" class="btn btn-success"><i class="fa fa-fw fa-thumbs-o-up"></i>&nbsp;Authenticate</button><br />
+                        </form><br />
+                    </div>
+                    <div class="col-md-4" style="	box-shadow: 0px 0px 8px  black;	background-image: linear-gradient(to bottom, #1e90ff, #fff);	background-position: top left;	background-size: 100%;	background-repeat: repeat;">
+                        <h3 class="text-center text-dark" style=""><b>Enrollee Verification Guidelines</b><br></h3>
+                        <ul class="">
+                            <li>You can verify Enrollees with Enrollee Policy Number, EVS Code, Staff Id or registered Phone Number.</li>
+                            <li>Enrollee Details will be displayed if he/she is registered with Novo Health Africa&nbsp;</li>
+                            <li>Enrollee can access care in your facility if you see a green banner with the inscription: "Enrollee Can Access Care Here".</li>
+                            <li>Enrollee can not access care in your facility if you see a red banner with the inscription: "Enrollee is not allow to Access Care Here".</li>
+                            <li contenteditable="true">Successful Enrollee Verification will include a verification code that can be used for primary care.&nbsp;</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 

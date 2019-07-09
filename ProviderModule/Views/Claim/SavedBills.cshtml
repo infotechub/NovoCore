@@ -17,14 +17,16 @@
             <table id="claims" class="table table-striped table-bordered table-hover table-responsive" width="100%">
                 <thead class="thin-border-bottom" >
                     <tr>
-                        <th>Full Name</th>
+                        <th>Id</th>
+                        <th>Claims Form No</th>
+                        <th>Enrollee Name</th>
                         <th>Policy Number</th>
-                        <th>Enrollee Company</th>
+                        <th> Company</th>
                         <th>Service Date</th>
                         <th>Diagnosis</th>
                         <th>Treatment Duration</th>
-                        <th>Service Charge</th>
                         <th>Drug Charge</th>
+                        <th>Service Charge</th>
                         <th>Total Charge</th>
                         <th>Added On</th>
                         <th>Actions</th>
@@ -45,47 +47,56 @@
     (function ($) {
         $("#claims").DataTable({
             ajax: {
-                url: "https://localhost:44376/api/Claims1",
+                url: "https://localhost:44376/api/claims1?ProviderId=9729",
                 dataSrc: ""
             },
+           
+             
             columns: [{
-                data: "enrolleeFullname",
+                data: "id", "autoWidth": true 
+
+            },
+                {
+                    data: "claimsSerialNo", "autoWidth": true 
+
+                },
+
+                {
+                    data: "enrolleeFullname", "autoWidth": true ,
                 render: function (data, type, claim) {
                     return "<a href=' " + claim.id + "'>" + claim.enrolleeFullname + "</a>";
                 }
             },
                 {
-                    data: "enrolleePolicyNumber"
+                    data: "enrolleePolicyNumber", "autoWidth": true 
 
                 },
                 {
-                    data: "enrolleeCompanyName"
+                    data: "enrolleeCompanyName", "autoWidth": true 
                 },
                 {
-                    data: "serviceDate"
+                    data: "serviceDate", "autoWidth": true 
                 },
                 {
-                    data: "diagnosis"
+                    data: "diagnosis", "autoWidth": true 
                 },
                 {
-                    data: "durationoftreatment"
+                    data: "durationoftreatment", "autoWidth": true 
                 },
                 {
-                    data: "initialAmount"
+                    data: "drugAmount", "autoWidth": true 
                     
                 },
                 {
-                    data: "initialAmount"
+                    data: "serviceAmount", "autoWidth": true 
                    
                 },
                 {
-                    data: "",
-                    render: function (data) {
-                        return "1000";
-                    }
+                    data: "totalcharge", "autoWidth": true 
+                   
                 },
                 {
-                    data: "createdOn"
+                    data: "createdOn", "autoWidth": true 
                 },
                
                 {

@@ -67,7 +67,7 @@ namespace ProviderModule.Controllers
                                   where b.Policynumber == "NHA-428025498745"
                                   select b).FirstOrDefault();
             dashboard.Provider = (from t in _context.Providers
-                                  where t.Id == 1029
+                                  where t.Id == 1026
                                   select t).FirstOrDefault();
             dashboard.Staff = (from b in _context.Staffs
                                where b.StaffId == "ST1204"
@@ -85,10 +85,10 @@ namespace ProviderModule.Controllers
             dashboard.Claim = (from d in _context.Claims
                                where d.ProviderId == ProviderId && d.status == "Captured"
                                select d).FirstOrDefault();
-            ViewBag.submittedcount = _context.Claims.Count(x => x.ProviderId == 1029 && x.status == "Vetting");
-            ViewBag.submittedsum = _context.Claims.Where(x => x.ProviderId == 1029).Include(c => c.ClaimDrugs).Include(s => s.ClaimServices);
+            ViewBag.submittedcount = _context.Claims.Count(x => x.ProviderId == 1026 && x.status == "Vetting");
+            ViewBag.submittedsum = _context.Claims.Where(x => x.ProviderId == 1026).Include(c => c.ClaimDrugs).Include(s => s.ClaimServices);
 
-            ViewBag.FacilitiesAllowed = _context.FacilitiesAlloweds.Count(x => x.CompanyPlanId == "12393" && x.ProviderId == "1029" && x.Planid == "3");
+            ViewBag.FacilitiesAllowed = _context.FacilitiesAlloweds.Count(x => x.CompanyPlanId == "12393" && x.ProviderId == "1026" && x.Planid == "3");
 
             if (ViewBag.FacilitiesAllowed == 0)
             {
